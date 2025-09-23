@@ -77,18 +77,13 @@ import Button from '../components/Button.astro';
         <h2 class="m-0 mt-14 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">About Me</h2>
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
             <!-- Profile Card -->
-            <div class="lg:w-1/3 flex flex-col items-center text-center p-6 rounded-lg border border-border bg-surface shadow-lg">
-                <img
-                    src="/placeholder-avatar.png"
-                    alt="Pxltr3's Avatar"
-                    class="rounded-full w-32 h-32 object-cover mb-4 shadow-md"
-                />
-                <h3 class="text-2xl font-bold text-heading mb-1">John Ogletree</h3>
-                <p class="text-accent text-lg mb-4">Digital Creator & Developer</p>
-                <p class="text-text-light leading-relaxed">
-                    Passionate about crafting engaging digital experiences with a focus on clean code and user-centric design.
-                </p>
-            </div>
+            <ProfileCard
+                name="John Ogletree"
+                title="Digital Creator & Developer"
+                description="Passionate about crafting engaging digital experiences with a focus on clean code and user-centric design."
+                imageUrl="/placeholder-avatar.png"
+                imageAlt="Pxltr3's Avatar"
+            />
 
             <!-- Skills Grid -->
             <div class="lg:w-2/3 p-6 rounded-lg border border-border bg-surface shadow-lg">
