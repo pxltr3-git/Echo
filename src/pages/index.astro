@@ -127,26 +127,35 @@ import Layout from '../layouts/Layout.astro';
                 </div>
             </div>
             <div class="flex flex-col gap-3 border-t border-border pt-5 md:min-w-[150px]">
-                <div class="flex w-full items-baseline justify-between">
-                    <span class="flex items-center gap-2 text-xs uppercase tracking-wider text-text-light">
-                        <span class="h-3 w-3 rounded-full" style="background-color: #f1e05a;"></span>
-                        JavaScript
-                    </span>
-                    <span class="text-lg font-medium text-heading">45%</span>
+                <div class="flex w-full flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                        <span class="flex items-center gap-2 text-xs uppercase tracking-wider text-text-light">
+                            <div class="h-4 w-4 rounded-full bg-cover bg-center" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%23f1e05a"/></svg>');"></div>
+                            JavaScript
+                        </span>
+                        <span class="text-lg font-medium text-heading">45%</span>
+                    </div>
+                    <div class="h-2.5 rounded bg-accent transition-[width] duration-[1500ms] ease-[cubic-bezier(0.25,1,0.5,1)]" data-width="45%" style="width: 45%;"></div>
                 </div>
-                <div class="flex w-full items-baseline justify-between">
-                    <span class="flex items-center gap-2 text-xs uppercase tracking-wider text-text-light">
-                        <span class="h-3 w-3 rounded-full" style="background-color: #3178c6;"></span>
-                        TypeScript
-                    </span>
-                    <span class="text-lg font-medium text-heading">30%</span>
+                <div class="flex w-full flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                        <span class="flex items-center gap-2 text-xs uppercase tracking-wider text-text-light">
+                            <div class="h-4 w-4 rounded-full bg-cover bg-center" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%233178c6"/></svg>');"></div>
+                            TypeScript
+                        </span>
+                        <span class="text-lg font-medium text-heading">30%</span>
+                    </div>
+                    <div class="h-2.5 rounded bg-accent transition-[width] duration-[1500ms] ease-[cubic-bezier(0.25,1,0.5,1)]" data-width="30%" style="width: 30%;"></div>
                 </div>
-                <div class="flex w-full items-baseline justify-between">
-                     <span class="flex items-center gap-2 text-xs uppercase tracking-wider text-text-light">
-                        <span class="h-3 w-3 rounded-full" style="background-color: #b07219;"></span>
-                        Java
-                    </span>
-                    <span class="text-lg font-medium text-heading">15%</span>
+                <div class="flex w-full flex-col gap-2">
+                    <div class="flex items-center justify-between">
+                        <span class="flex items-center gap-2 text-xs uppercase tracking-wider text-text-light">
+                            <div class="h-4 w-4 rounded-full bg-cover bg-center" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%23b07219"/></svg>');"></div>
+                            Java
+                        </span>
+                        <span class="text-lg font-medium text-heading">15%</span>
+                    </div>
+                    <div class="h-2.5 rounded bg-accent transition-[width] duration-[1500ms] ease-[cubic-bezier(0.25,1,0.5,1)]" data-width="15%" style="width: 15%;"></div>
                 </div>
             </div>
         </div>
