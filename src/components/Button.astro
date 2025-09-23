@@ -1,0 +1,30 @@
+---
+interface Props {
+  variant?: 'primary' | 'secondary';
+  href?: string; // Make href optional
+  text: string;
+  target?: '_blank' | '_self' | '_parent' | '_top';
+  rel?: string;
+  type?: 'button' | 'submit' | 'reset'; // Add type prop for buttons
+}
+
+const { variant = 'primary', href, text, target, rel, type = 'button' } = Astro.props;
+
+const baseClasses = 'inline-flex items-center justify-center rounded-md font-mono font-bold no-underline transition-colors duration-200';
+const primaryClasses = 'border border-heading bg-heading py-3 px-8 text-text hover:border-[#D36C52] hover:bg-[#D36C52]';
+const secondaryClasses = 'border border-heading bg-transparent py-3 px-8 text-heading hover:bg-heading hover:text-text';
+
+const classes = `${baseClasses} ${variant === 'primary' ? primaryClasses : secondaryClasses}`;
+---
+
+{href ? (
+  <a href={href} class={classes} target={target} rel={rel}>
+    {text}
+    <slot />
+  </a>
+) : (
+  <button type={type} class={`${classes} w-full`}> {/* Added w-full for form buttons */}
+    {text}
+    <slot />
+  </button>
+)}
