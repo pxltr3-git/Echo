@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+nav a:hover {
+  color: var(--color-accent);
+}
+
+nav a.current-page {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
