@@ -1,25 +1,15 @@
 ---
-interface Props {
-  name: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-  imageAlt: string;
-}
-
-const { name, title, description, imageUrl, imageAlt } = Astro.props;
-// This is a test comment to force re-compilation
 ---
 
 <div class="lg:w-1/3 flex flex-col items-center text-center p-6 rounded-lg border border-border bg-surface shadow-lg">
     <img
-        src={imageUrl}
-        alt={imageAlt}
+        src={Astro.props.imageUrl}
+        alt={Astro.props.imageAlt}
         class="rounded-full w-32 h-32 object-cover mb-4 shadow-md"
     />
-    <h3 class="text-2xl font-bold text-heading mb-1">{name}</h3>
-    <p class="text-accent text-lg mb-4">{title}</p>
+    <h3 class="text-2xl font-bold text-heading mb-1">{Astro.props.name}</h3>
+    <p class="text-accent text-lg mb-4">{Astro.props.title}</p>
     <p class="text-text-light leading-relaxed">
-        {description}
+        {Astro.props.description}
     </p>
 </div>
