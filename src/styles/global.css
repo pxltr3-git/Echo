@@ -3,8 +3,3 @@
 nav a:hover {
   color: red;
 }
-
-nav a.current-page {
-  color: red;
-  text-decoration: underline;
-}
