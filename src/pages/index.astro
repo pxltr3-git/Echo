@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
-
+import ProfileCard from '../components/ProfileCard.astro';
 ---
 
 <Layout
@@ -240,6 +240,9 @@ import Button from '../components/Button.astro';
             <article>
                 <a href="/thoughts/post-slug-1" class="group flex h-full rounded-lg border border-border bg-surface no-underline transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
                     <div class="flex flex-col p-6">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="/placeholder-avatar.png" alt="Abstract code on a screen" class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105">
+                        </div>
                         <p class="mb-2 text-xs text-text-light">Film Review · 6 min read</p>
                         <h3 class="m-0 mb-3 font-mono text-xl font-bold text-accent transition-colors duration-200 group-hover:text-heading group-hover:underline">Dune: A Masterclass in World-Building</h3>
                         <p class="mb-6 flex-grow text-[0.95rem] leading-relaxed text-text">Denis Villeneuve's adaptation of the sci-fi epic is a cinematic triumph, blending stunning visuals with a deeply resonant narrative. A closer look at what makes it unforgettable.</p>
@@ -254,6 +257,9 @@ import Button from '../components/Button.astro';
             <article>
                 <a href="/thoughts/post-slug-2" class="group flex h-full rounded-lg border border-border bg-surface no-underline transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
                      <div class="flex flex-col p-6">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="/placeholder-avatar.png" alt="Abstract code on a screen" class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105">
+                        </div>
                         <p class="mb-2 text-xs text-text-light">Tech Review · 8 min read</p>
                         <h3 class="m-0 mb-3 font-mono text-xl font-bold text-accent transition-colors duration-200 group-hover:text-heading group-hover:underline">The M4 AstroBook: A Developer's Dream?</h3>
                         <p class="mb-6 flex-grow text-[0.95rem] leading-relaxed text-text">After a month with Apple's latest hardware, I'm sharing my thoughts on its performance, battery life, and whether it's the ultimate machine for modern web development.</p>
