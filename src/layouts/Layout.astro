@@ -18,6 +18,19 @@ const {
     twitterUrl = "https://example.com/",
     twitterImage = "https://example.com/social-preview.png"
 } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+    { name: "Start", href: "/" },
+    { name: "Profile", href: "/profile" },
+    { name: "Capabilities", href: "/capabilities" },
+    { name: "Creations", href: "/creations" },
+    { name: "Connect", href: "/connect" },
+    { name: "Log", href: "/log" },
+    { name: "Credentials", href: "/credentials" },
+    { name: "FAQ", href: "/faq" },
+];
 ---
 
 <!doctype html>
@@ -59,14 +72,9 @@ const {
                 </div>
             </div>
             <nav class="hidden md:flex items-center gap-6">
-                <a href="/" class="text-text hover:text-accent transition-colors duration-200">Start</a>
-                <a href="/profile" class="text-text hover:text-accent transition-colors duration-200">Profile</a>
-                <a href="/capabilities" class="text-text hover:text-accent transition-colors duration-200">Capabilities</a>
-                <a href="/creations" class="text-text hover:text-accent transition-colors duration-200">Creations</a>
-                <a href="/connect" class="text-text hover:text-accent transition-colors duration-200">Connect</a>
-                <a href="/log" class="text-text hover:text-accent transition-colors duration-200">Log</a>
-                <a href="/credentials" class="text-text hover:text-accent transition-colors duration-200">Credentials</a>
-                <a href="/faq" class="text-text hover:text-accent transition-colors duration-200">FAQ</a>
+                {navLinks.map((link) => (
+                    <a href={link.href} class={`text-text hover:text-accent transition-colors duration-200 ${currentPath === link.href ? 'current-page' : ''}`}>{link.name}</a>
+                ))}
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-text focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -84,14 +92,9 @@ const {
                 </button>
             </div>
             <nav class="flex flex-col items-center gap-6 py-8">
-                <a href="/" class="text-text text-2xl hover:text-accent transition-colors duration-200">Start</a>
-                <a href="/profile" class="text-text text-2xl hover:text-accent transition-colors duration-200">Profile</a>
-                <a href="/capabilities" class="text-text text-2xl hover:text-accent transition-colors duration-200">Capabilities</a>
-                <a href="/creations" class="text-text text-2xl hover:text-accent transition-colors duration-200">Creations</a>
-                <a href="/connect" class="text-text text-2xl hover:text-accent transition-colors duration-200">Connect</a>
-                <a href="/log" class="text-text text-2xl hover:text-accent transition-colors duration-200">Log</a>
-                <a href="/credentials" class="text-text text-2xl hover:text-accent transition-colors duration-200">Credentials</a>
-                <a href="/faq" class="text-text text-2xl hover:text-accent transition-colors duration-200">FAQ</a>
+                {navLinks.map((link) => (
+                    <a href={link.href} class={`text-text text-2xl hover:text-accent transition-colors duration-200 ${currentPath === link.href ? 'current-page' : ''}`}>{link.name}</a>
+                ))}
             </nav>
         </div>
 
