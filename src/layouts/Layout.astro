@@ -1,5 +1,4 @@
 ---
-import Footer from '../components/Footer.astro';
 interface Props {
 	title: string;
     description?: string;
@@ -117,7 +116,6 @@ const {
         <main class="mx-auto px-4 py-4 pb-8 transition-filter duration-300 ease-in-out md:px-6 lg:px-8">
             <slot />
         </main>
-        <Footer />
     </div>
 
 <script is:inline>
