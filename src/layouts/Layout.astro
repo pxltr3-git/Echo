@@ -241,7 +241,10 @@ const {
         const currentPath = window.location.pathname;
         const navLinks = document.querySelectorAll('nav a');
 
+        console.log('currentPath', currentPath);
+
         navLinks.forEach(link => {
+            console.log('link.getAttribute('href')', link.getAttribute('href'));
             if (link.getAttribute('href') === currentPath) {
                 link.classList.add('current-page');
             }
