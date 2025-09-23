@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+    title="Echo | About Pxltr3"
+    description="Learn more about Pxltr3, a passionate developer and creator."
+    keywords="Pxltr3, About Me, Profile, Web Developer, UI/UX Designer, Digital Creator"
+>
+    <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
+      <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+        <div class="lg:w-1/2 text-center lg:text-left">
+          <h2 class="text-4xl font-extrabold tracking-tight sm:text-5xl mb-6">
+            Hi, I'm Pxltr3!
+          </h2>
+          <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            I'm a passionate developer and creator, constantly exploring new technologies and building innovative solutions. With a keen eye for detail and a love for clean code, I strive to bring ideas to life through thoughtful design and robust implementation.
+          </p>
+          <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            My journey in tech is driven by curiosity and a desire to make an impact. Whether it's crafting engaging user experiences or optimizing backend performance, I'm always eager to tackle new challenges and expand my skillset.
+          </p>
+          
+          <div class="mt-8">
+            <h3 class="text-2xl font-semibold mb-4">My Expertise:</h3>
+            <div class="flex flex-wrap justify-center lg:justify-start gap-3">
+              <span class="px-4 py-2 bg-blue-500 text-white rounded-full text-sm font-medium">Web Development</span>
+              <span class="px-4 py-2 bg-green-500 text-white rounded-full text-sm font-medium">UI/UX Design</span>
+              <span class="px-4 py-2 bg-purple-500 text-white rounded-full text-sm font-medium">Backend Systems</span>
+              <span class="px-4 py-2 bg-yellow-500 text-white rounded-full text-sm font-medium">Cloud Computing</span>
+              <span class="px-4 py-2 bg-red-500 text-white rounded-full text-sm font-medium">DevOps</span>
+            </div>
+          </div>
+
+          <div class="mt-10">
+            <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition duration-300 ease-in-out">
+              Let's Connect!
+              <svg class="ml-3 -mr-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="lg:w-1/2 flex justify-center lg:justify-end">
+          <img 
+            src="/placeholder-avatar.png" 
+            alt="Pxltr3's Avatar" 
+            class="rounded-full w-64 h-64 object-cover shadow-lg transform hover:scale-105 transition duration-300 ease-in-out"
+          />
+        </div>
+      </div>
+    </section>
+</Layout>
