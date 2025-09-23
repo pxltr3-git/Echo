@@ -329,31 +329,83 @@ import ProfileCard from '../components/ProfileCard.astro';
 
             <section class="faq-section">
                 <h2 class="m-0 mt-14 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">Frequently Asked Questions</h2>
-                <div>
-                    <details class="mb-4 rounded-lg border border-border bg-surface p-6">
-                        <summary class="flex cursor-pointer list-none items-center justify-between text-lg font-bold text-accent hover:text-heading after:text-2xl after:font-normal after:transition-transform after:duration-200 after:ease-out after:content-['+'] open:after:rotate-45">What is your current availability for new projects?</summary>
-                        <div class="pt-4 leading-relaxed text-text-light">
-                            <p class="mb-4">I am currently available for new freelance projects and contract roles. If you have an interesting challenge, feel free to reach out via the contact form above.</p>
+                <div class="space-y-4">
+                    <div class="accordion-item rounded-lg border border-border bg-surface">
+                        <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading">
+                            <span>What is your current availability for new projects?</span>
+                            <svg class="h-6 w-6 transform transition-transform duration-200 ease-out" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                            <div class="p-6 pt-0">
+                                <p class="mb-4">I am currently available for new freelance projects and contract roles. If you have an interesting challenge, feel free to reach out via the contact form above.</p>
+                            </div>
                         </div>
-                    </details>
-                    <details class="mb-4 rounded-lg border border-border bg-surface p-6">
-                        <summary class="flex cursor-pointer list-none items-center justify-between text-lg font-bold text-accent hover:text-heading after:text-2xl after:font-normal after:transition-transform after:duration-200 after:ease-out after:content-['+'] open:after:rotate-45">What technologies are you most excited about right now?</summary>
-                         <div class="pt-4 leading-relaxed text-text-light">
-                            <p>I'm particularly excited about the evolution of edge computing and the growing capabilities of modern web frameworks like Astro and SvelteKit. On the design front, I'm closely following the advancements in variable fonts and generative AI tools.</p>
+                    </div>
+                    <div class="accordion-item rounded-lg border border-border bg-surface">
+                        <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading">
+                            <span>What technologies are you most excited about right now?</span>
+                            <svg class="h-6 w-6 transform transition-transform duration-200 ease-out" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                            <div class="p-6 pt-0">
+                                <p>I'm particularly excited about the evolution of edge computing and the growing capabilities of modern web frameworks like Astro and SvelteKit. On the design front, I'm closely following the advancements in variable fonts and generative AI tools.</p>
+                            </div>
                         </div>
-                    </details>
-                    <details class="mb-4 rounded-lg border border-border bg-surface p-6">
-                        <summary class="flex cursor-pointer list-none items-center justify-between text-lg font-bold text-accent hover:text-heading after:text-2xl after:font-normal after:transition-transform after:duration-200 after:ease-out after:content-['+'] open:after:rotate-45">Where are you located?</summary>
-                         <div class="pt-4 leading-relaxed text-text-light">
-                            <p>I am based in Martinez, Georgia, and am available for remote work globally. I'm also open to hybrid opportunities in the Augusta metropolitan area.</p>
+                    </div>
+                    <div class="accordion-item rounded-lg border border-border bg-surface">
+                        <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading">
+                            <span>Where are you located?</span>
+                            <svg class="h-6 w-6 transform transition-transform duration-200 ease-out" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                            <div class="p-6 pt-0">
+                                <p>I am based in Martinez, Georgia, and am available for remote work globally. I'm also open to hybrid opportunities in the Augusta metropolitan area.</p>
+                            </div>
                         </div>
-                    </details>
-                    <details class="mb-4 rounded-lg border border-border bg-surface p-6">
-                        <summary class="flex cursor-pointer list-none items-center justify-between text-lg font-bold text-accent hover:text-heading after:text-2xl after:font-normal after:transition-transform after:duration-200 after:ease-out after:content-['+'] open:after:rotate-45">Can we see more of your work?</summary>
-                         <div class="pt-4 leading-relaxed text-text-light">
-                            <p>Absolutely! The "Creations Overview" on this page is just a small sample. You can view a more extensive collection of my work on the dedicated <a href="/projects/index">creations page</a>.</p>
+                    </div>
+                    <div class="accordion-item rounded-lg border border-border bg-surface">
+                        <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading">
+                            <span>Can we see more of your work?</span>
+                            <svg class="h-6 w-6 transform transition-transform duration-200 ease-out" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                            <div class="p-6 pt-0">
+                                <p>Absolutely! The "Creations Overview" on this page is just a small sample. You can view a more extensive collection of my work on the dedicated <a href="/projects/index">creations page</a>.</p>
+                            </div>
                         </div>
-                    </details>
+                    </div>
                 </div>
             </section>
+
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+        const accordionItems = document.querySelectorAll('.accordion-item');
+
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            const content = item.querySelector('.accordion-content');
+            const icon = header.querySelector('svg');
+
+            header.addEventListener('click', () => {
+                item.classList.toggle('open');
+
+                if (item.classList.contains('open')) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    content.style.maxHeight = '0';
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+    });
+</script>
     </Layout>
