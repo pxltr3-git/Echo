@@ -3,12 +3,20 @@ interface Props {
 	title: string;
     description?: string;
     keywords?: string;
+    ogUrl?: string;
+    ogImage?: string;
+    twitterUrl?: string;
+    twitterImage?: string;
 }
 
 const { 
     title,
     description = "Welcome to Echo, the personal portfolio of John Ogletree. Explore my creations in web design, development, and digital strategy.",
-    keywords = "John Ogletree, Portfolio, Web Developer, UI/UX Designer, Digital Creator, Astro, JavaScript, Georgia"
+    keywords = "John Ogletree, Portfolio, Web Developer, UI/UX Designer, Digital Creator, Astro, JavaScript, Georgia",
+    ogUrl = "https://example.com/",
+    ogImage = "https://example.com/social-preview.png",
+    twitterUrl = "https://example.com/",
+    twitterImage = "https://example.com/social-preview.png"
 } = Astro.props;
 ---
 
@@ -29,17 +37,17 @@ const {
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://example.com/" />
+		<meta property="og:url" content={ogUrl} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content="https://example.com/social-preview.png" />
+		<meta property="og:image" content={ogImage} />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content="https://example.com/" />
+		<meta property="twitter:url" content={twitterUrl} />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content="https://example.com/social-preview.png" />
+		<meta property="twitter:image" content={twitterImage} />
 	
 	</head>
 	<body class="bg-bg text-text font-mono text-base leading-relaxed m-0 p-0 transition-transform duration-300 ease-in-out">
