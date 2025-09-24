@@ -29,7 +29,7 @@ wss.on('connection', ws => {
     name: 'xterm-color',
     cols: 80,
     rows: 24,
-    cwd: process.env.HOME, // Start in the user's home directory
+    cwd: process.cwd(), // Start in the project's root directory
     env: process.env
   });
 
