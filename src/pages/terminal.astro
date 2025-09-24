@@ -22,11 +22,49 @@ const title = "Terminal";
   document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('terminal-container');
     if (container) {
-      const terminal = new Terminal(container); // Assuming constructor takes a DOM element
-      terminal.open(); // Assuming an 'open' method to start the terminal
-      // For a truly working terminal, you'll need a backend to execute commands.
-      // The client-side web-terminal typically provides the UI and handles input/output display.
-      // You would usually connect it to a WebSocket or other API that communicates with a server-side process.
+      const ws = new WebSocket('ws://localhost:3000'); // Connect to the backend WebSocket server
+
+      ws.onopen = () => {
+        console.log('WebSocket connected');
+        const terminal = new Terminal(container, {
+          // Assuming web-terminal takes a WebSocket as an option
+          // This part is highly dependent on the actual web-terminal API
+          // You might need to implement custom data handling if it doesn't directly support WebSocket
+          handler: {
+            onData: (data) => {
+              ws.send(data); // Send terminal input to WebSocket
+            },
+            onResize: (cols, rows) => {
+              ws.send(JSON.stringify({ type: 'resize', cols, rows })); // Send resize events
+            }
+          }
+        });
+
+        terminal.open();
+
+        ws.onmessage = event => {
+          terminal.write(event.data); // Write WebSocket data to terminal
+        };
+
+        ws.onclose = () => {
+          console.log('WebSocket disconnected');
+          terminal.dispose(); // Clean up terminal
+        };
+
+        ws.onerror = error => {
+          console.error('WebSocket error:', error);
+        };
+
+        // Handle terminal resize events
+        terminal.onResize(size => {
+          ws.send(JSON.stringify({ type: 'resize', cols: size.cols, rows: size.rows }));
+        });
+      };
+
+      ws.onerror = error => {
+        console.error('WebSocket connection error:', error);
+        container.innerText = 'Failed to connect to terminal backend.';
+      };
     }
   });
 </script>
