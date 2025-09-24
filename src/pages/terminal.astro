@@ -11,15 +11,22 @@ const title = "Terminal";
   </main>
 </Layout>
 
+<style is:global>
+  /* Assuming web-terminal needs its own styles */
+  @import 'web-terminal/dist/style.css'; /* This path might need adjustment */
+</style>
+
 <script is:inline>
-  import { Terminal } from 'web-terminal'; // Assuming a named export 'Terminal'
+  import Terminal from 'web-terminal'; // Assuming a default export
 
   document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('terminal-container');
     if (container) {
       const terminal = new Terminal(container); // Assuming constructor takes a DOM element
       terminal.open(); // Assuming an 'open' method to start the terminal
-      // You might need to add more configuration or event listeners here
+      // For a truly working terminal, you'll need a backend to execute commands.
+      // The client-side web-terminal typically provides the UI and handles input/output display.
+      // You would usually connect it to a WebSocket or other API that communicates with a server-side process.
     }
   });
 </script>
