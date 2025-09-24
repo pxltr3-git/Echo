@@ -31,3 +31,5 @@ pnpm-debug.log*
 
 # web-terminal output (assuming it creates a directory)
 /terminal/
+
+
