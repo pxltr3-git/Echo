@@ -75,9 +75,9 @@ import ProfileCard from '../components/ProfileCard.astro';
 
     <section class="about-me-section px-4 sm:px-6 lg:px-8 text-text">
         <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">About Me</h2>
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-12">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch gap-12">
             <!-- Left Column: Image Card -->
-            <div class="lg:w-1/3 flex flex-col items-center text-center p-6 rounded-lg border border-border bg-surface shadow-lg">
+            <div class="lg:w-1/3 flex flex-col items-center text-center p-6 rounded-lg border border-border bg-surface shadow-lg h-full">
                 <img
                     src="/favicon.svg"
                     alt="John Ogletree Profile Picture"
@@ -86,7 +86,7 @@ import ProfileCard from '../components/ProfileCard.astro';
             </div>
 
             <!-- Right Column: Profile Info Card -->
-            <div class="lg:w-2/3 flex flex-col items-center lg:items-start text-center lg:text-left p-6 rounded-lg border border-border bg-surface shadow-lg">
+            <div class="lg:w-2/3 flex flex-col items-center lg:items-start text-center lg:text-left p-6 rounded-lg border border-border bg-surface shadow-lg h-full">
                 <ProfileCard
                     name="John Ogletree"
                     title="Digital Creator & Developer"
