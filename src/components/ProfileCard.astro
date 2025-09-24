@@ -1,4 +1,6 @@
 ---
+import Button from './Button.astro';
+
 interface Props {
   name: string;
   title: string;
@@ -22,5 +24,22 @@ const { name, title, description, imageUrl, imageAlt } = Astro.props;
         <p class="text-text-light leading-relaxed">
             {description}
         </p>
+        <!-- New section starts here -->
+        <div class="mt-6 w-full flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4">
+            <!-- 2x2 Skill Grid -->
+            <div class="grid grid-cols-2 gap-2">
+                <span class="rounded-full bg-[rgba(224,122,95,0.15)] py-1 px-3 text-xs font-medium text-[#B35F48]">Astro</span>
+                <span class="rounded-full bg-[rgba(38,139,210,0.15)] py-1 px-3 text-xs font-medium text-[#268BD2]">React</span>
+                <span class="rounded-full bg-[rgba(181,137,0,0.2)] py-1 px-3 text-xs font-medium text-[#b58900]">JavaScript</span>
+                <span class="rounded-full bg-[rgba(108,113,196,0.15)] py-1 px-3 text-xs font-medium text-[#6C71C4]">TypeScript</span>
+            </div>
+            <!-- Learn More Button -->
+            <Button href="/profile" text="Learn More" variant="secondary">
+                <svg class="ml-3 -mr-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </Button>
+        </div>
+        <!-- New section ends here -->
     </div>
 </div>
