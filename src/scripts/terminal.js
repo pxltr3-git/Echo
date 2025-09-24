@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fitAddon.fit();
 
     function connect(retries = 5, delay = 1000) {
-      const ws = new WebSocket('ws://localhost:4444');
+      const ws = new WebSocket(`ws://localhost:${import.meta.env.PUBLIC_TERMINAL_PORT}`);
 
       ws.onopen = () => {
         console.log('WebSocket connected');
