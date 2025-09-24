@@ -13,6 +13,9 @@ module.exports = {
         'border': '#5B4F48',
         'tag-bg': 'rgba(61, 135, 166, 0.15)',
       },
+      spacing: {
+        '2.5': '2.5px',
+      },
       fontFamily: {
         mono: ['IBM Plex Mono', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
       },
