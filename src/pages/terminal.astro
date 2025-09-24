@@ -7,58 +7,52 @@ const title = "Terminal";
 <Layout title={title}>
   <main>
     <h1>{title}</h1>
-    <div id="terminal-container"></div>
+    <div id="terminal-container" style="width: 100%; height: 500px;"></div>
   </main>
 </Layout>
 
 <style is:global>
-  /* Assuming web-terminal needs its own styles */
-  @import 'web-terminal/web/main.css';
+  @import '@xterm/xterm/css/xterm.css';
 </style>
 
 <script is:inline>
-  import Terminal from 'web-terminal'; // Assuming a default export
+  import { Terminal } from '@xterm/xterm';
+  import { FitAddon } from '@xterm/addon-fit';
 
   document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('terminal-container');
     if (container) {
-      const ws = new WebSocket('ws://localhost:3000'); // Connect to the backend WebSocket server
+      const term = new Terminal({
+        cursorBlink: true,
+        convertEol: true
+      });
+      const fitAddon = new FitAddon();
+      term.loadAddon(fitAddon);
+
+      term.open(container);
+      fitAddon.fit();
+
+      const ws = new WebSocket('ws://localhost:4444');
 
       ws.onopen = () => {
         console.log('WebSocket connected');
-        const terminal = new Terminal(container, {
-          // Assuming web-terminal takes a WebSocket as an option
-          // This part is highly dependent on the actual web-terminal API
-          // You might need to implement custom data handling if it doesn't directly support WebSocket
-          handler: {
-            onData: (data) => {
-              ws.send(data); // Send terminal input to WebSocket
-            },
-            onResize: (cols, rows) => {
-              ws.send(JSON.stringify({ type: 'resize', cols, rows })); // Send resize events
-            }
-          }
+        term.onData(data => {
+          ws.send(data);
         });
 
-        terminal.open();
-
         ws.onmessage = event => {
-          terminal.write(event.data); // Write WebSocket data to terminal
+          term.write(event.data);
         };
 
         ws.onclose = () => {
           console.log('WebSocket disconnected');
-          terminal.dispose(); // Clean up terminal
+          term.write('\r\nConnection closed.\r\n');
         };
 
         ws.onerror = error => {
           console.error('WebSocket error:', error);
+          term.write('\r\nWebSocket error.\r\n');
         };
-
-        // Handle terminal resize events
-        terminal.onResize(size => {
-          ws.send(JSON.stringify({ type: 'resize', cols: size.cols, rows: size.rows }));
-        });
       };
 
       ws.onerror = error => {
