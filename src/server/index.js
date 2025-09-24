@@ -25,12 +25,13 @@ wss.on('connection', ws => {
 
   // Spawn a new shell for each client
   const shell = process.platform === 'win32' ? 'powershell.exe' : 'bash';
+  const env = { ...process.env, HOSTNAME: 'echo' };
   const ptyProcess = spawn(shell, [], {
     name: 'xterm-color',
     cols: 80,
     rows: 24,
     cwd: process.cwd(), // Start in the project's root directory
-    env: process.env
+    env: env
   });
 
   // Send data from pty to websocket
