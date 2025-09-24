@@ -15,6 +15,7 @@
     "express": "^5.1.0",
     "node-pty": "^1.0.0",
     "tailwindcss": "^3.4.3",
+    "web-terminal": "^0.7.0",
     "ws": "^8.18.3"
   }
 }
