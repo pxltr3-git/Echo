@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = 3000; // Or any other port you prefer for the backend
+const port = 4444; // Or any other port you prefer for the backend
 
 // Serve static files from the 'public' directory (if needed, for example, for the client-side web-terminal)
 // app.use(express.static(path.join(__dirname, '../../public')));
