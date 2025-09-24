@@ -26,7 +26,7 @@ wss.on('connection', ws => {
   // Spawn a new shell for each client
   const shell = process.platform === 'win32' ? 'powershell.exe' : 'bash';
   const env = { ...process.env, PS1: 'pxltr3@echo:\w$ ' };
-  const ptyProcess = spawn(shell, [], {
+  const ptyProcess = spawn(shell, ['--norc', '--noprofile'], {
     name: 'xterm-color',
     cols: 80,
     rows: 24,
