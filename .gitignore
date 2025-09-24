@@ -32,4 +32,5 @@ pnpm-debug.log*
 # web-terminal output (assuming it creates a directory)
 /terminal/
 
-
+src/pages/terminal.astro
+src/server/index.js
