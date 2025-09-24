@@ -76,13 +76,15 @@ import ProfileCard from '../components/ProfileCard.astro';
     <section class="about-me-section px-4 sm:px-6 lg:px-8 text-text">
         <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">About Me</h2>
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 p-6 rounded-lg border border-border bg-surface shadow-lg">
-            <!-- Combined Profile Section -->
             <div class="flex flex-col items-center text-center lg:text-left lg:items-start lg:flex-row gap-8 w-full">
-                <img
-                    src="/favicon.svg"
-                    alt="John Ogletree Profile Picture"
-                    class="rounded-full w-48 h-48 object-cover flex-shrink-0"
-                />
+                <div class="relative group">
+                    <img
+                        src="/favicon.svg"
+                        alt="John Ogletree Profile Picture"
+                        class="rounded-full w-48 h-48 object-cover flex-shrink-0 transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl"
+                    />
+                    <div class="absolute inset-0 rounded-full ring-4 ring-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
+                </div>
                 <div class="flex flex-col justify-between flex-grow">
                     <ProfileCard
                         name="John Ogletree"
@@ -90,7 +92,7 @@ import ProfileCard from '../components/ProfileCard.astro';
                         description="Passionate about crafting engaging digital experiences with a focus on clean code and user-centric design."
                     />
                     <div class="mt-6 w-full flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 lg:justify-start">
-                        <div class="grid grid-cols-3 gap-2">
+                        <div class="flex flex-wrap gap-2">
                             <span class="rounded-full bg-[rgba(224,122,95,0.15)] py-1 px-3 text-xs font-medium text-[#B35F48]">Astro</span>
                             <span class="rounded-full bg-[rgba(38,139,210,0.15)] py-1 px-3 text-xs font-medium text-[#268BD2]">React</span>
                             <span class="rounded-full bg-[rgba(181,137,0,0.2)] py-1 px-3 text-xs font-medium text-[#b58900]">JavaScript</span>
@@ -418,6 +420,43 @@ import ProfileCard from '../components/ProfileCard.astro';
                 }
             });
         });
+    });
+</script>
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+        const typedTextSpan = document.getElementById('typed-text');
+        const phrases = ["Digital Creator.", "Problem Solver.", "Lifelong Learner."];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100; // milliseconds per character
+        const deletingSpeed = 50; // milliseconds per character
+        const delayBetweenPhrases = 1500; // milliseconds
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            if (isDeleting) {
+                typedTextSpan.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typedTextSpan.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                setTimeout(() => isDeleting = true, delayBetweenPhrases);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+            }
+
+            const speed = isDeleting ? deletingSpeed : typingSpeed;
+            setTimeout(type, speed);
+        }
+
+        if (typedTextSpan) {
+            type();
+        }
     });
 </script>
     </Layout>
