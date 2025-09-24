@@ -28,3 +28,6 @@ pnpm-debug.log*
 
 # VS Code files
 .vscode/
+
+# web-terminal output (assuming it creates a directory)
+/terminal/

@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Terminal";
+---
+
+<Layout title={title}>
+  <main>
+    <h1>{title}</h1>
+    <div id="terminal-container"></div>
+  </main>
+</Layout>
+
+<script is:inline>
+  import { Terminal } from 'web-terminal'; // Assuming a named export 'Terminal'
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('terminal-container');
+    if (container) {
+      const terminal = new Terminal(container); // Assuming constructor takes a DOM element
+      terminal.open(); // Assuming an 'open' method to start the terminal
+      // You might need to add more configuration or event listeners here
+    }
+  });
+</script>
