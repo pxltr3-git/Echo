@@ -86,15 +86,79 @@ import ProfileCard from '../components/ProfileCard.astro';
             <!-- Skills Grid -->
             <div class="lg:w-2/3 p-6 rounded-lg border border-border bg-surface shadow-lg">
                 <h3 class="m-0 mb-6 font-mono text-base font-bold uppercase tracking-wider text-accent">Skills</h3>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                    <span class="rounded-full bg-[rgba(224,122,95,0.15)] py-2 px-4 text-sm font-medium text-[#B35F48] text-center">Astro</span>
-                    <span class="rounded-full bg-[rgba(38,139,210,0.15)] py-2 px-4 text-sm font-medium text-[#268BD2] text-center">React</span>
-                    <span class="rounded-full bg-[rgba(181,137,0,0.2)] py-2 px-4 text-sm font-medium text-[#b58900] text-center">JavaScript</span>
-                    <span class="rounded-full bg-[rgba(106,153,78,0.2)] py-2 px-4 text-sm font-medium text-[#6A994E] text-center">TypeScript</span>
-                    <span class="rounded-full bg-[rgba(108,113,196,0.15)] py-2 px-4 text-sm font-medium text-[#6C71C4] text-center">Tailwind CSS</span>
-                    <span class="rounded-full bg-[rgba(203,75,22,0.15)] py-2 px-4 text-sm font-medium text-[#CB4B16] text-center">Node.js</span>
-                    <span class="rounded-full bg-[rgba(42,161,152,0.15)] py-2 px-4 text-sm font-medium text-[#2AA198] text-center">Git</span>
-                    <span class="rounded-full bg-[rgba(188,71,73,0.15)] py-2 px-4 text-sm font-medium text-[#BC4749] text-center">Figma</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
+                    <div class="flex flex-col gap-1">
+                        <div class="flex justify-between text-sm font-medium text-text">
+                            <span>Astro</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="w-full bg-border rounded-full h-2.5">
+                            <div class="bg-accent h-2.5 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <div class="flex justify-between text-sm font-medium text-text">
+                            <span>React</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="w-full bg-border rounded-full h-2.5">
+                            <div class="bg-accent h-2.5 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <div class="flex justify-between text-sm font-medium text-text">
+                            <span>JavaScript</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="w-full bg-border rounded-full h-2.5">
+                            <div class="bg-accent h-2.5 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <div class="flex justify-between text-sm font-medium text-text">
+                            <span>TypeScript</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="w-full bg-border rounded-full h-2.5">
+                            <div class="bg-accent h-2.5 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <div class="flex justify-between text-sm font-medium text-text">
+                            <span>Tailwind CSS</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="w-full bg-border rounded-full h-2.5">
+                            <div class="bg-accent h-2.5 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <div class="flex justify-between text-sm font-medium text-text">
+                            <span>Node.js</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="w-full bg-border rounded-full h-2.5">
+                            <div class="bg-accent h-2.5 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <div class="flex justify-between text-sm font-medium text-text">
+                            <span>Git</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="w-full bg-border rounded-full h-2.5">
+                            <div class="bg-accent h-2.5 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <div class="flex justify-between text-sm font-medium text-text">
+                            <span>Figma</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="w-full bg-border rounded-full h-2.5">
+                            <div class="bg-accent h-2.5 rounded-full" style="width: 70%"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="mt-8 text-center">
                     <Button href="/resume/index" text="View Full Résumé" variant="secondary">
