@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # Gemini CLI files
 .gemini/
+
+# VS Code files
+.vscode/
