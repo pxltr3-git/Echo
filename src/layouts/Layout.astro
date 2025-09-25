@@ -70,7 +70,7 @@ const navLinks = [
             </div>
             <nav class="hidden md:flex flex-wrap justify-center gap-x-4 gap-y-2 md:items-center md:gap-8">
                 {navLinks.map((link) => (
-                    <a href={link.href} class="text-text transition-colors duration-200 hover:text-primary">{link.name}</a>
+                    <a href={link.href} class="text-text transition-colors duration-200 hover:text-accent">{link.name}</a>
                 ))}
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-text focus:outline-none">
@@ -90,7 +90,7 @@ const navLinks = [
             </div>
             <nav class="flex flex-col items-center gap-6 py-8">
                 {navLinks.map((link) => (
-                    <a href={link.href} class="text-text text-2xl transition-colors duration-200 hover:text-primary">{link.name}</a>
+                    <a href={link.href} class="text-text text-2xl transition-colors duration-200 hover:text-accent">{link.name}</a>
                 ))}
             </nav>
         </div>
