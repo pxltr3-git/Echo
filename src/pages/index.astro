@@ -13,32 +13,7 @@ import ProfileCard from '../components/ProfileCard.astro';
     twitterUrl="https://your-website.com/"
     twitterImage="https://your-website.com/social-preview.png"
 >
-    <div id="promo-banner" class="relative mb-0 overflow-hidden rounded-lg bg-gradient-to-r from-accent to-heading p-4 px-8 text-center text-text shadow-lg transition-all duration-500 ease-in-out">
-        <p class="m-0 font-medium text-lg">✨ Exciting News! My portfolio just got a fresh new look! ✨</p>
-        <button id="dismiss-banner" class="absolute top-2 right-4 p-2 text-text hover:text-text-light focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-        </button>
-    </div>
-
-    <script is:inline>
-        document.addEventListener('DOMContentLoaded', () => {
-            const banner = document.getElementById('promo-banner');
-            const dismissButton = document.getElementById('dismiss-banner');
-
-            if (banner && dismissButton) {
-                dismissButton.addEventListener('click', () => {
-                    banner.style.maxHeight = '0';
-                    banner.style.paddingTop = '0';
-                    banner.style.paddingBottom = '0';
-                    banner.style.marginBottom = '0';
-                    banner.style.opacity = '0';
-                    setTimeout(() => banner.remove(), 500); // Remove after transition
-                });
-            }
-        });
-    </script>
+    
 
     
 
