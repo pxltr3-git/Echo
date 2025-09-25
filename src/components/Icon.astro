@@ -1,14 +1,14 @@
 ---
-import svgs from '../data/svgs.json';
+import * as icons from '../scripts/svgs.js';
 
 export interface Props {
-    icon: keyof typeof svgs;
+    icon: keyof typeof icons;
     class?: string;
 }
 
 const { icon, class: className, ...rest } = Astro.props;
 
-let svgMarkup = svgs[icon];
+let svgMarkup = icons[icon];
 
 if (className) {
     const existingClassMatch = svgMarkup.match(/class="([^"]*)"/);
