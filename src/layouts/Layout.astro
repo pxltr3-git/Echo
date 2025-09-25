@@ -1,6 +1,4 @@
 ---
-import Navigation from "../components/Navigation.astro";
-
 interface Props {
 	title: string;
     description?: string;
@@ -21,7 +19,16 @@ const {
     twitterImage = "https://example.com/social-preview.png"
 } = Astro.props;
 
-
+const navLinks = [
+    { name: "Start", href: "/" },
+    { name: "Profile", href: "/profile" },
+    { name: "Capabilities", href: "/capabilities" },
+    { name: "Creations", href: "/creations" },
+    { name: "Connect", href: "/connect" },
+    { name: "Log", href: "/log" },
+    { name: "Credentials", href: "/credentials" },
+    { name: "FAQ", href: "/faq" },
+];
 ---
 
 <!doctype html>
@@ -53,9 +60,37 @@ const {
 	
 	</head>
 	<body class="bg-bg text-text font-mono text-base leading-relaxed m-0 p-0 transition-transform duration-300 ease-in-out">
-<Navigation />
 <slot />
 <script is:inline>
+    // Original script for nav drawer and year
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     const navToggle = document.getElementById('nav-toggle');
+    //     const navDrawer = document.getElementById('nav-drawer-container');
+    //     const navClose = document.querySelector('.nav-close');
+    //     const body = document.body;
+    //     function toggleMobileNav() {
+    //         const isOpen = navDrawer.classList.contains('is-open');
+    //         navDrawer.classList.toggle('is-open', !isOpen);
+    //         navToggle.setAttribute('aria-expanded', !isOpen);
+    //         body.classList.toggle('no-scroll', !isOpen);
+    //     }
+
+    //     if (navToggle && navDrawer) {
+    //         navToggle.addEventListener('click', toggleMobileNav);
+    //         navClose.addEventListener('click', toggleMobileNav);
+    //     }
+
+    //     const navLinks = document.querySelectorAll('.nav-links a');
+    //     navLinks.forEach(link => {
+    //         link.addEventListener('click', (event) => {
+    //             if (link.classList.contains('nav-dropdown-toggle')) return;
+    //             if (navDrawer.classList.contains('is-open')) {
+    //                 toggleMobileNav();
+    //             }
+    //         });
+    //     });
+
+    // New script for dynamic cards
     document.addEventListener('DOMContentLoaded', function() {
         // --- Profile Card Logic ---
         const profileCard = document.getElementById('profile-card');
@@ -142,6 +177,21 @@ const {
         if(typedTextSpan) {
             terminalObserver.observe(typedTextSpan);
         }
+    });
+
+    // --- Nav Link Active State ---
+    document.addEventListener('DOMContentLoaded', () => {
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('nav a');
+
+        console.log('currentPath', currentPath);
+
+        navLinks.forEach(link => {
+            console.log('link.getAttribute("href")', link.getAttribute('href'));
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('current-page');
+            }
+        });
     });
 
 </script>
