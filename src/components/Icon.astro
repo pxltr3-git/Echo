@@ -1,0 +1,20 @@
+---
+import svgs from '../data/svgs.json';
+
+export interface Props {
+    icon: keyof typeof svgs;
+    class?: string;
+}
+
+const { icon, class: className, ...rest } = Astro.props;
+
+let svgMarkup = svgs[icon];
+
+if (className) {
+    const existingClassMatch = svgMarkup.match(/class="([^"]*)"/);
+    const allClassNames = [existingClassMatch ? existingClassMatch[1] : '', className].filter(Boolean).join(' ');
+    svgMarkup = existingClassMatch ? svgMarkup.replace(existingClassMatch[0], `class="${allClassNames}"`) : svgMarkup.replace('<svg', `<svg class="${allClassNames}"`);
+}
+---
+
+<Fragment set:html={svgMarkup} {...rest} />
