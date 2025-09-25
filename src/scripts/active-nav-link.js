@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const linkPath = link.getAttribute('href');
         // Make "Start" active on the homepage ('/') and other links active on their respective pages.
         if (linkPath === currentPath || (currentPath === '/' && linkPath === '/')) {
-            link.classList.add('current-page');
+            link.classList.add('current-page', 'text-white');
             link.classList.remove('opacity-50'); // Make it fully visible
         }
     });
