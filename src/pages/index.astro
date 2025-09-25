@@ -370,64 +370,6 @@ import Icon from '../components/Icon.astro';
                 </div>
             </section>
 
-<script is:inline>
-    document.addEventListener('DOMContentLoaded', () => {
-        const accordionItems = document.querySelectorAll('.accordion-item');
-
-        accordionItems.forEach(item => {
-            const header = item.querySelector('.accordion-header');
-            const content = item.querySelector('.accordion-content');
-            const icon = header.querySelector('svg');
-
-            header.addEventListener('click', () => {
-                item.classList.toggle('open');
-
-                if (item.classList.contains('open')) {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                    icon.style.transform = 'rotate(180deg)';
-                } else {
-                    content.style.maxHeight = '0';
-                    icon.style.transform = 'rotate(0deg)';
-                }
-            });
-        });
-    });
-</script>
-<script is:inline>
-    document.addEventListener('DOMContentLoaded', () => {
-        const typedTextSpan = document.getElementById('typed-text');
-        const phrases = ["Digital Creator.", "Problem Solver.", "Lifelong Learner."];
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingSpeed = 100; // milliseconds per character
-        const deletingSpeed = 50; // milliseconds per character
-        const delayBetweenPhrases = 1500; // milliseconds
-
-        function type() {
-            const currentPhrase = phrases[phraseIndex];
-            if (isDeleting) {
-                typedTextSpan.textContent = currentPhrase.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typedTextSpan.textContent = currentPhrase.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            if (!isDeleting && charIndex === currentPhrase.length) {
-                setTimeout(() => isDeleting = true, delayBetweenPhrases);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-            }
-
-            const speed = isDeleting ? deletingSpeed : typingSpeed;
-            setTimeout(type, speed);
-        }
-
-        if (typedTextSpan) {
-            type();
-        }
-    });
-</script>
-    </Layout>
+<script src="/scripts/accordion.js"></script>
+<script src="/scripts/terminal-typing.js"></script>
+</Layout>
