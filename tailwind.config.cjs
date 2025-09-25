@@ -4,14 +4,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'bg': '#3B2F2A',
-        'surface': '#4A3E38',
-        'text': '#F0EAD6',
-        'text-light': '#D4C9A8',
-        'heading': '#E07A5F',
-        'accent': '#3D87A6',
-        'border': '#5B4F48',
-        'tag-bg': 'rgba(61, 135, 166, 0.15)',
+        'bg': '#1A1A2E',           // Deep Indigo - A dark, mysterious base
+        'surface': '#2E2E4A',      // Darker Violet - Slightly lighter for cards/panels
+        'text': '#E0E0FF',         // Light Lavender - High contrast, clean text
+        'text-light': '#B0B0D0',   // Muted Lavender - Secondary text, less prominent
+        'heading': '#00BCD4',      // Vibrant Cyan - Striking, modern heading color
+        'accent': '#FF4081',       // Electric Pink/Magenta - Bold, energetic accent
+        'border': '#4A4A6A',       // Muted Purple-Gray - Subtle separation
+        'tag-bg': 'rgba(255, 64, 129, 0.15)', // Translucent Electric Pink for tags
       },
       spacing: {
         '2.5': '2.5px',
