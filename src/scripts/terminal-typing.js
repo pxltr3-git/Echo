@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "echo 'Welcome, Operator. System online.'"
     ];
     let commandIndex = 0;
-    const typeSpeed = 50; // Typing speed
-    const outputDelay = 1000; // Delay before showing output
+    const typeSpeed = 20; // Typing speed
+    const outputDelay = 500; // Delay before showing output
 
     const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <p class="text-gray-400">CPU: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz</p>
             <p class="text-green-400">Booting from primary drive...</p>
         `);
-        await sleep(2000);
+        await sleep(1000);
 
         // Filesystem check
         await typeCommand(commands[commandIndex]);
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <p class="text-green-400">/dev/echo0: clean, 123456/789012 files, 9876543/12345678 blocks</p>
             <p class="text-green-400">Filesystem check complete. No errors found.</p>
         `);
-        await sleep(2000);
+        await sleep(1000);
 
         // Service status
         await typeCommand(commands[commandIndex]);
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <p class="text-blue-400">   CGroup: /system.slice/echo-core.service</p>
             <p class="text-green-400">System services are fully operational.</p>
         `);
-        await sleep(2000);
+        await sleep(1000);
 
         // Final welcome message
         await typeCommand(commands[commandIndex]);
@@ -101,11 +101,11 @@ document.addEventListener('DOMContentLoaded', () => {
             <p class="text-green-400 text-xl font-bold">Welcome, Operator. System online.</p>
             <p class="text-gray-400">Loading main interface...</p>
         `);
-        await sleep(3000);
+        await sleep(1500);
 
         // Hide terminal overlay and show main content
         terminalOverlay.style.opacity = '0';
-        await sleep(1000); // Wait for fade out
+        await sleep(500); // Wait for fade out
         terminalOverlay.style.display = 'none';
         mainContent.style.display = 'block';
         mainContent.style.opacity = '1';
