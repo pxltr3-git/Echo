@@ -1,0 +1,27 @@
+
+[
+    {
+        "image": "Abstract code on a screen",
+        "category": "Film Review",
+        "readTime": "6 min read",
+        "title": "Dune: A Masterclass in World-Building",
+        "description": "Denis Villeneuve's adaptation of the sci-fi epic is a cinematic triumph, blending stunning visuals with a deeply resonant narrative. A closer look at what makes it unforgettable.",
+        "tags": ["Film", "Sci-Fi", "Review"]
+    },
+    {
+        "image": "Abstract code on a screen",
+        "category": "Tech Review",
+        "readTime": "8 min read",
+        "title": "The M4 AstroBook: A Developer's Dream?",
+        "description": "After a month with Apple's latest hardware, I'm sharing my thoughts on its performance, battery life, and whether it's the ultimate machine for modern web development.",
+        "tags": ["Tech", "Apple", "Review"]
+    },
+    {
+        "image": "Abstract code on a screen",
+        "category": "Personal Essay",
+        "readTime": "5 min read",
+        "title": "Finding Creative Flow in Augusta",
+        "description": "Moving away from the hustle of a big city was a creative gamble. Here's how the quiet charm of Martinez and the surrounding area has reshaped my daily process and inspiration.",
+        "tags": ["Life", "Creativity", "Georgia"]
+    }
+]
