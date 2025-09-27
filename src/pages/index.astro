@@ -13,7 +13,7 @@ import ProfileCard from '../components/ProfileCard.astro';
     twitterUrl="https://your-website.com/"
     twitterImage="https://your-website.com/social-preview.png"
 >
-    <div id="terminal-overlay" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black transition-opacity duration-1000 ease-out opacity-100">
+    <div id="terminal-overlay" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black transition-opacity duration-1000 ease-out opacity-0 hidden">
         <div class="overflow-hidden rounded-lg border border-border bg-[#2E282A] text-text shadow-lg w-11/12 max-w-4xl">
             <div class="flex items-center gap-2 bg-text-light p-2 px-4 text-xs text-bg">
                 <div class="mr-auto flex gap-2">
@@ -35,7 +35,7 @@ import ProfileCard from '../components/ProfileCard.astro';
         </div>
     </div>
 
-    <div id="main-content" style="display: none; opacity: 0; transition: opacity 1s ease-out;">
+    <div id="main-content" style="opacity: 1; transition: opacity 1s ease-out;">
         <div class="py-8">
             <section class="hero-section text-center py-16 md:py-24 lg:py-32 bg-gradient-to-b from-bg to-surface-light rounded-lg shadow-xl border border-border mb-8">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-heading mb-4 font-mono leading-tight">John Ogletree</h1>
