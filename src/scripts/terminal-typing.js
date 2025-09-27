@@ -98,14 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
         await sleep(outputDelay);
 
         await displayOutput(`
-            <pre class="text-green-400">
-███████╗██╗  ██╗███████╗ ██████╗ ██████╗
-██╔════╝██║  ██║██╔════╝██╔═══██╗██╔══██╗
-█████╗  ███████║█████╗  ██║   ██║██████╔╝
-██╔══╝  ██╔══██║██╔══╝  ██║   ██║██╔══██╗
-███████╗██║  ██║███████╗╚██████╔╝██║  ██║
-╚══════╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
-            </pre>
             <p class="text-green-400 text-xl font-bold">Welcome, Operator. System online.</p>
             <p class="text-gray-400">Loading main interface...</p>
         `);
