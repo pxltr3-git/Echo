@@ -1,0 +1,20 @@
+[
+    {
+        "image": "Abstract code on a screen",
+        "title": "Echo - Personal Portfolio",
+        "description": "The very website you are on. A fully responsive personal hub built with Astro, showcasing a blend of design and modern web technologies.",
+        "tags": ["Astro", "CSS", "JavaScript"]
+    },
+    {
+        "image": "Analytics dashboard with charts and graphs",
+        "title": "QuantumLeap - SaaS Dashboard",
+        "description": "A UI/UX concept for a next-generation analytics platform, focusing on data visualization and intuitive user workflows.",
+        "tags": ["Figma", "UI/UX", "Prototyping"]
+    },
+    {
+        "image": "Laptop with code and abstract shapes",
+        "title": "CodeGenius - AI Assistant UI",
+        "description": "An interface design for an AI-powered code completion tool, designed to be unobtrusive yet powerful for developers.",
+        "tags": ["UI Design", "UX Research"]
+    }
+]
