@@ -223,14 +223,14 @@ import ProfileCard from '../components/ProfileCard.astro';
     <section class="log-overview w-full">
         <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">Log Overview</h2>
         <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
-            <article class="group flex h-full rounded-lg border border-border bg-surface no-underline transition-transform duration-200 ease-out">
+            <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
                 <div class="aspect-video overflow-hidden">
                     <img alt="Abstract code on a screen" class="h-full w-full object-cover transition-transform duration-300 ease-out">
                 </div>
                 <div class="flex flex-col p-6 flex-grow">
                     <p class="mb-2 text-xs text-text-light">Film Review · 6 min read</p>
-                    <h3 class="m-0 mb-3 font-mono text-xl font-bold text-accent transition-colors duration-200">Dune: A Masterclass in World-Building</h3>
-                    <p class="mb-4 flex-grow text-[0.95rem] leading-relaxed text-text">Denis Villeneuve's adaptation of the sci-fi epic is a cinematic triumph, blending stunning visuals with a deeply resonant narrative. A closer look at what makes it unforgettable.</p>
+                    <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">Dune: A Masterclass in World-Building</h3>
+                    <p class="mb-4 flex-grow text-[0.95rem] leading-relaxed text-text-light">Denis Villeneuve's adaptation of the sci-fi epic is a cinematic triumph, blending stunning visuals with a deeply resonant narrative. A closer look at what makes it unforgettable.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="rounded-full bg-[rgba(106,153,78,0.2)] py-1 px-3 text-xs font-medium text-[#6A994E]">Film</span>
                         <span class="rounded-full bg-[rgba(108,113,196,0.15)] py-1 px-3 text-xs font-medium text-[#6C71C4]">Sci-Fi</span>
@@ -238,15 +238,15 @@ import ProfileCard from '../components/ProfileCard.astro';
                     </div>
                     <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text w-full">View Post</a>
                 </div>
-            </article>
-            <article class="group flex h-full rounded-lg border border-border bg-surface no-underline transition-transform duration-200 ease-out">
+            </div>
+            <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
                 <div class="aspect-video overflow-hidden">
                     <img alt="Abstract code on a screen" class="h-full w-full object-cover transition-transform duration-300 ease-out">
                 </div>
                 <div class="flex flex-col p-6 flex-grow">
                     <p class="mb-2 text-xs text-text-light">Tech Review · 8 min read</p>
-                    <h3 class="m-0 mb-3 font-mono text-xl font-bold text-accent transition-colors duration-200">The M4 AstroBook: A Developer's Dream?</h3>
-                    <p class="mb-4 flex-grow text-[0.95rem] leading-relaxed text-text">After a month with Apple's latest hardware, I'm sharing my thoughts on its performance, battery life, and whether it's the ultimate machine for modern web development.</p>
+                    <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">The M4 AstroBook: A Developer's Dream?</h3>
+                    <p class="mb-4 flex-grow text-[0.95rem] leading-relaxed text-text-light">After a month with Apple's latest hardware, I'm sharing my thoughts on its performance, battery life, and whether it's the ultimate machine for modern web development.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="rounded-full bg-[rgba(0,95,115,0.15)] py-1 px-3 text-xs font-medium text-[#005f73]">Tech</span>
                         <span class="rounded-full bg-[rgba(147,161,161,0.2)] py-1 px-3 text-xs font-medium text-[#839496]">Apple</span>
@@ -254,15 +254,15 @@ import ProfileCard from '../components/ProfileCard.astro';
                     </div>
                     <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text w-full">View Post</a>
                 </div>
-            </article>
-            <article class="group flex h-full rounded-lg border border-border bg-surface no-underline transition-transform duration-200 ease-out">
+            </div>
+            <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
                 <div class="aspect-video overflow-hidden">
                     <img alt="Abstract code on a screen" class="h-full w-full object-cover transition-transform duration-300 ease-out">
                 </div>
                 <div class="flex flex-col p-6 flex-grow">
                     <p class="mb-2 text-xs text-text-light">Personal Essay · 5 min read</p>
-                    <h3 class="m-0 mb-3 font-mono text-xl font-bold text-accent transition-colors duration-200">Finding Creative Flow in Augusta</h3>
-                    <p class="mb-4 flex-grow text-[0.95rem] leading-relaxed text-text">Moving away from the hustle of a big city was a creative gamble. Here's how the quiet charm of Martinez and the surrounding area has reshaped my daily process and inspiration.</p>
+                    <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">Finding Creative Flow in Augusta</h3>
+                    <p class="mb-4 flex-grow text-[0.95rem] leading-relaxed text-text-light">Moving away from the hustle of a big city was a creative gamble. Here's how the quiet charm of Martinez and the surrounding area has reshaped my daily process and inspiration.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="rounded-full bg-[rgba(217,91,138,0.15)] py-1 px-3 text-xs font-medium text-[#D95B8A]">Life</span>
                         <span class="rounded-full bg-[rgba(108,113,196,0.2)] py-1 px-3 text-xs font-medium text-[#6C71C4]">Creativity</span>
@@ -270,7 +270,7 @@ import ProfileCard from '../components/ProfileCard.astro';
                     </div>
                     <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text w-full">View Post</a>
                 </div>
-            </article>
+            </div>
                 </div>
                 <div class="mt-8 text-center">
                     <a href="/thoughts/index" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">View All Posts</a>
