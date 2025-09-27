@@ -324,51 +324,61 @@ import ProfileCard from '../components/ProfileCard.astro';
             <section class="faq-section w-full">
                 <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">Frequently Asked Questions</h2>
                 <div class="space-y-4">
-                    <div class="accordion-item rounded-lg border border-border bg-surface">
-                        <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading">
-
-
+                    <div class="accordion-item rounded-lg border border-border bg-surface hover:bg-surface-light transition-colors duration-200">
+                        <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading focus:outline-none" data-accordion-toggle>
+                            <span>Are you available for new projects?</span>
+                            <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out" data-accordion-content>
                             <div class="p-6 pt-0">
-                                <p class="mb-4">I am currently available for new freelance projects and contract roles. If you have an interesting challenge, feel free to reach out via the contact form above.</p>
+                                <p class="mb-4 text-text-light">Yes, I am currently open to exciting new freelance projects and contract opportunities. Whether it's a fresh website, a UI/UX overhaul, or a digital strategy consultation, I'd love to hear about your vision. Let's connect!</p>
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item rounded-lg border border-border bg-surface">
-                        <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading">
-
-
+                    <div class="accordion-item rounded-lg border border-border bg-surface hover:bg-surface-light transition-colors duration-200">
+                        <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading focus:outline-none" data-accordion-toggle>
+                            <span>What technologies and design trends excite you most?</span>
+                            <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out" data-accordion-content>
                             <div class="p-6 pt-0">
-                                <p>I'm particularly excited about the evolution of edge computing and the growing capabilities of modern web frameworks like Astro and SvelteKit. On the design front, I'm closely following the advancements in variable fonts and generative AI tools.</p>
+                                <p class="text-text-light">I'm particularly excited about the evolution of edge computing and the growing capabilities of modern web frameworks like Astro and SvelteKit. On the design front, I'm closely following the advancements in variable fonts and generative AI tools, always looking for ways to integrate cutting-edge solutions into my work.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item rounded-lg border border-border bg-surface">
-                        <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading">
-
+                    <div class="accordion-item rounded-lg border border-border bg-surface hover:bg-surface-light transition-colors duration-200">
+                        <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading focus:outline-none" data-accordion-toggle>
+                            <span>Where are you located and do you work remotely?</span>
+                            <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out" data-accordion-content>
                             <div class="p-6 pt-0">
-                                <p>I am based in Martinez, Georgia, and am available for remote work globally. I'm also open to hybrid opportunities in the Augusta metropolitan area.</p>
+                                <p class="text-text-light">I am based in Martinez, Georgia, and am available for remote work globally. I'm also open to hybrid opportunities in the Augusta metropolitan area, enjoying the best of both worlds.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item rounded-lg border border-border bg-surface">
-                        <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading">
+                    <div class="accordion-item rounded-lg border border-border bg-surface hover:bg-surface-light transition-colors duration-200">
+                        <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading focus:outline-none" data-accordion-toggle>
                             <span>Can we see more of your work?</span>
-
+                            <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out" data-accordion-content>
                             <div class="p-6 pt-0">
-                                <p>Absolutely! The "Creations Overview" on this page is just a small sample. You can view a more extensive collection of my work on the dedicated <a href="/projects/index">creations page</a>.</p>
+                                <p class="text-text-light">Absolutely! The "Creations Overview" on this page is just a small sample. You can view a more extensive collection of my work on the dedicated <a href="/projects/index" class="text-accent hover:underline">creations page</a>. Feel free to explore and get a deeper insight into my projects.</p>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                    <div class="accordion-item rounded-lg border border-border bg-surface hover:bg-surface-light transition-colors duration-200">
+                        <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading focus:outline-none" data-accordion-toggle>
+                            <span>What's your favorite part about being a digital creator?</span>
+                            <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out" data-accordion-content>
+                            <div class="p-6 pt-0">
+                                <p class="text-text-light">The most rewarding aspect is bringing ideas to life and seeing them make a tangible impact. There's a unique satisfaction in crafting a seamless user experience or developing a solution that truly helps someone. Plus, the continuous learning and evolution of the digital landscape keep things endlessly exciting!</p>
+                            </div>
+                        </div>
+                    </div>
 
 </Layout>
 <script>
