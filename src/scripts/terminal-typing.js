@@ -75,7 +75,15 @@ document.addEventListener('DOMContentLoaded', () => {
         await displayOutput(`
             <p class="text-green-400">echo-core.service - Echo Core System</p>
             <p class="text-green-400">   Loaded: loaded (/etc/systemd/system/echo-core.service; enabled; vendor preset: enabled)</p>
-            <p class="text-green-400">   Active: active (running) since Fri 2025-09-26 08:00:00 UTC; 1min 30s ago</p>
+            <p class="text-green-400">   Active: active (running) since ${(() => {
+                const now = new Date();
+                const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+                const dayName = days[now.getDay()];
+                const year = now.getFullYear();
+                const month = (now.getMonth() + 1).toString().padStart(2, '0');
+                const date = now.getDate().toString().padStart(2, '0');
+                return `${dayName} ${year}-${month}-${date}`;
+            })()}</p>
             <p class="text-blue-400"> Main PID: 1001 (echo-core)</p>
             <p class="text-blue-400">    Tasks: 5 (limit: 4915)</p>
             <p class="text-blue-400">   Memory: 12.5M</p>
