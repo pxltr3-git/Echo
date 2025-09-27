@@ -111,5 +111,14 @@ document.addEventListener('DOMContentLoaded', () => {
         mainContent.style.opacity = '1';
     };
 
-    runSequence();
+    const hasVisited = sessionStorage.getItem('hasVisited');
+
+    if (!hasVisited) {
+        runSequence();
+        sessionStorage.setItem('hasVisited', 'true');
+    } else {
+        terminalOverlay.style.display = 'none';
+        mainContent.style.display = 'block';
+        mainContent.style.opacity = '1';
+    }
 });
