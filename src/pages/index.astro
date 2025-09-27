@@ -69,10 +69,19 @@ import ProfileCard from '../components/ProfileCard.astro';
                         "Design is not just what it looks like and feels like. Design is how it works." - Steve Jobs
                     </blockquote>
                     <div class="mt-6 w-full flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 lg:justify-start">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="rounded-full bg-[rgba(224,122,95,0.15)] py-1 px-3 text-xs font-medium text-[#B35F48] transition-all duration-200 ease-in-out hover:scale-110 hover:bg-[#B35F48] hover:text-bg">Astro</span>
-                            <span class="rounded-full bg-[rgba(38,139,210,0.15)] py-1 px-3 text-xs font-medium text-[#268BD2] transition-all duration-200 ease-in-out hover:scale-110 hover:bg-[#268BD2] hover:text-bg">React</span>
-                            <span class="rounded-full bg-[rgba(181,137,0,0.2)] py-1 px-3 text-xs font-medium text-[#b58900] transition-all duration-200 ease-in-out hover:scale-110 hover:bg-[#b58900] hover:text-bg">JavaScript</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+                            <div class="skill-item relative w-full h-6 bg-surface-dark rounded-full overflow-hidden shadow-inner">
+                                <div class="progress-bar absolute top-0 left-0 h-full bg-accent transition-all duration-1000 ease-out" data-width="90%"></div>
+                                <span class="absolute inset-0 flex items-center justify-center text-sm font-bold text-bg z-10">Astro</span>
+                            </div>
+                            <div class="skill-item relative w-full h-6 bg-surface-dark rounded-full overflow-hidden shadow-inner">
+                                <div class="progress-bar absolute top-0 left-0 h-full bg-accent transition-all duration-1000 ease-out" data-width="85%"></div>
+                                <span class="absolute inset-0 flex items-center justify-center text-sm font-bold text-bg z-10">React</span>
+                            </div>
+                            <div class="skill-item relative w-full h-6 bg-surface-dark rounded-full overflow-hidden shadow-inner">
+                                <div class="progress-bar absolute top-0 left-0 h-full bg-accent transition-all duration-1000 ease-out" data-width="95%"></div>
+                                <span class="absolute inset-0 flex items-center justify-center text-sm font-bold text-bg z-10">JavaScript</span>
+                            </div>
                         </div>
                         <Button href="/profile" text="Learn More" variant="secondary">
                         </Button>
@@ -370,4 +379,5 @@ import ProfileCard from '../components/ProfileCard.astro';
 <script>
     import '../scripts/accordion.js';
     import '../scripts/terminal-typing.js';
+    import '../scripts/page-animations.js';
 </script>
