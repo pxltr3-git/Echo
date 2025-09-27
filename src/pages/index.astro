@@ -125,60 +125,75 @@ import ProfileCard from '../components/ProfileCard.astro';
     <section class="projects-overview w-full">
         <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">Creations Overview</h2>
         <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
-            <div class="group flex flex-row overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
-                <div class="flex flex-col p-6 w-1/2">
-                    <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">Echo - Personal Portfolio</h3>
-                    <p class="mb-6 flex-grow text-[0.95rem] leading-relaxed text-text-light">The very website you are on. A fully responsive personal hub built with Astro, showcasing a blend of design and modern web technologies.</p>
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex flex-wrap gap-2 w-1/2">
-                            <span class="rounded-full bg-[rgba(224,122,95,0.15)] py-1 px-3 text-xs font-medium text-[#B35F48]">Astro</span>
-                            <span class="rounded-full bg-[rgba(38,139,210,0.15)] py-1 px-3 text-xs font-medium text-[#268BD2]">CSS</span>
-                            <span class="rounded-full bg-[rgba(181,137,0,0.2)] py-1 px-3 text-xs font-medium text-[#b58900]">JavaScript</span>
-                        </div>
-                        <div class="w-1/2 text-right">
-                            <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">View Project</a>
+            <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+                <div class="flex flex-row w-full">
+                    <div class="flex flex-col p-6 w-1/2">
+                        <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">Echo - Personal Portfolio</h3>
+                        <p class="mb-6 flex-grow text-[0.95rem] leading-relaxed text-text-light">The very website you are on. A fully responsive personal hub built with Astro, showcasing a blend of design and modern web technologies.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex flex-wrap gap-2 w-1/2">
+                                <span class="rounded-full bg-[rgba(224,122,95,0.15)] py-1 px-3 text-xs font-medium text-[#B35F48]">Astro</span>
+                                <span class="rounded-full bg-[rgba(38,139,210,0.15)] py-1 px-3 text-xs font-medium text-[#268BD2]">CSS</span>
+                                <span class="rounded-full bg-[rgba(181,137,0,0.2)] py-1 px-3 text-xs font-medium text-[#b58900]">JavaScript</span>
+                            </div>
+                            <div class="w-1/2 text-right">
+                                
+                            </div>
                         </div>
                     </div>
+                    <div class="w-1/2 aspect-video overflow-hidden">
+                        <img alt="Abstract code on a screen" class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105">
+                    </div>
                 </div>
-                <div class="w-1/2 aspect-video overflow-hidden">
-                    <img alt="Abstract code on a screen" class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105">
+                <div class="p-6 pt-0 text-center w-full">
+                    <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">View Project</a>
                 </div>
             </div>
-             <div class="group flex flex-row overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
-                <div class="flex flex-col p-6 w-1/2">
-                    <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">QuantumLeap - SaaS Dashboard</h3>
-                    <p class="mb-4">A UI/UX concept for a next-generation analytics platform, focusing on data visualization and intuitive user workflows.</p>
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex flex-wrap gap-2 w-1/2">
-                            <span class="rounded-full bg-[rgba(163,55,240,0.1)] py-1 px-3 text-xs font-medium text-[#8327c3]">Figma</span>
-                            <span class="rounded-full bg-tag-bg py-1 px-3 text-xs font-medium text-accent">UI/UX</span>
-                            <span class="rounded-full bg-[rgba(188,71,73,0.15)] py-1 px-3 text-xs font-medium text-[#BC4749]">Prototyping</span>
-                        </div>
-                        <div class="w-1/2 text-right">
-                            <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">View Project</a>
+             <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+                <div class="flex flex-row w-full">
+                    <div class="flex flex-col p-6 w-1/2">
+                        <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">QuantumLeap - SaaS Dashboard</h3>
+                        <p class="mb-4">A UI/UX concept for a next-generation analytics platform, focusing on data visualization and intuitive user workflows.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex flex-wrap gap-2 w-1/2">
+                                <span class="rounded-full bg-[rgba(163,55,240,0.1)] py-1 px-3 text-xs font-medium text-[#8327c3]">Figma</span>
+                                <span class="rounded-full bg-tag-bg py-1 px-3 text-xs font-medium text-accent">UI/UX</span>
+                                <span class="rounded-full bg-[rgba(188,71,73,0.15)] py-1 px-3 text-xs font-medium text-[#BC4749]">Prototyping</span>
+                            </div>
+                            <div class="w-1/2 text-right">
+                                
+                            </div>
                         </div>
                     </div>
+                    <div class="w-1/2 aspect-video overflow-hidden">
+                        <img alt="Analytics dashboard with charts and graphs" class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105">
+                    </div>
                 </div>
-                <div class="w-1/2 aspect-video overflow-hidden">
-                    <img alt="Analytics dashboard with charts and graphs" class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105">
+                <div class="p-6 pt-0 text-center w-full">
+                    <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">View Project</a>
                 </div>
             </div>
-             <div class="group flex flex-row overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
-                <div class="flex flex-col p-6 w-1/2">
-                    <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">CodeGenius - AI Assistant UI</h3>
-                    <p class="mb-4">An interface design for an AI-powered code completion tool, designed to be unobtrusive yet powerful for developers.</p>
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex flex-wrap gap-2 w-1/2">
-                            <span class="rounded-full bg-[rgba(42,161,152,0.15)] py-1 px-3 text-xs font-medium text-[#2AA198]">UI Design</span>
-                            <span class="rounded-full bg-[rgba(203,75,22,0.15)] py-1 px-3 text-xs font-medium text-[#CB4B16]">UX Research</span>
-                        </div>
-                        <div class="w-1/2 text-right">
-                            <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">View Project</a>
+             <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+                <div class="flex flex-row w-full">
+                    <div class="flex flex-col p-6 w-1/2">
+                        <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">CodeGenius - AI Assistant UI</h3>
+                        <p class="mb-4">An interface design for an AI-powered code completion tool, designed to be unobtrusive yet powerful for developers.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex flex-wrap gap-2 w-1/2">
+                                <span class="rounded-full bg-[rgba(42,161,152,0.15)] py-1 px-3 text-xs font-medium text-[#2AA198]">UI Design</span>
+                                <span class="rounded-full bg-[rgba(203,75,22,0.15)] py-1 px-3 text-xs font-medium text-[#CB4B16]">UX Research</span>
+                            </div>
+                            <div class="w-1/2 text-right">
+                                
+                            </div>
                         </div>
                     </div>
+                    <div class="w-1/2 aspect-video overflow-hidden">
+                        <img alt="Laptop with code and abstract shapes" class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105">
+                    </div>
                 </div>
-                <div class="w-1/2 aspect-video overflow-hidden">
-                    <img alt="Laptop with code and abstract shapes" class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105">
+                <div class="p-6 pt-0 text-center w-full">
+                    <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">View Project</a>
                 </div>
             </div>
         </div>
