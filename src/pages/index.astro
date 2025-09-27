@@ -1,10 +1,8 @@
----
+--- 
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import ProfileCard from '../components/ProfileCard.astro';
 import icons from '../data/svgs.json';
-import logs from '../data/logs.json';
-import creations from '../data/creations.json';
 ---
 
 <Layout
@@ -128,22 +126,47 @@ import creations from '../data/creations.json';
     <section class="projects-overview w-full">
         <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">Creations Overview</h2>
         <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
-            {creations.map(creation => (
-                <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
-                    <div class="aspect-video overflow-hidden">
-                        <img alt={creation.image} class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105">
-                    </div>
-                    <div class="flex flex-col p-6">
-                        <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">{creation.title}</h3>
-                        <p class="mb-6 flex-grow text-[0.95rem] leading-relaxed text-text-light">{creation.description}</p>
-                        <div class="flex flex-wrap gap-2">
-                            {creation.tags.map(tag => (
-                                <span class="rounded-full bg-[rgba(224,122,95,0.15)] py-1 px-3 text-xs font-medium text-[#B35F48]">{tag}</span>
-                            ))}
-                        </div>
+            <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+                <div class="aspect-video overflow-hidden">
+                    <img alt="Abstract code on a screen" class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105">
+                </div>
+                <div class="flex flex-col p-6">
+                    <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">Echo - Personal Portfolio</h3>
+                    <p class="mb-6 flex-grow text-[0.95rem] leading-relaxed text-text-light">The very website you are on. A fully responsive personal hub built with Astro, showcasing a blend of design and modern web technologies.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="rounded-full bg-[rgba(224,122,95,0.15)] py-1 px-3 text-xs font-medium text-[#B35F48]">Astro</span>
+                        <span class="rounded-full bg-[rgba(38,139,210,0.15)] py-1 px-3 text-xs font-medium text-[#268BD2]">CSS</span>
+                        <span class="rounded-full bg-[rgba(181,137,0,0.2)] py-1 px-3 text-xs font-medium text-[#b58900]">JavaScript</span>
                     </div>
                 </div>
-            ))}
+            </div>
+             <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+                <div class="aspect-video overflow-hidden">
+                    <img alt="Analytics dashboard with charts and graphs" class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105">
+                </div>
+                <div class="flex flex-col p-6">
+                    <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">QuantumLeap - SaaS Dashboard</h3>
+                    <p class="mb-4">A UI/UX concept for a next-generation analytics platform, focusing on data visualization and intuitive user workflows.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="rounded-full bg-[rgba(163,55,240,0.1)] py-1 px-3 text-xs font-medium text-[#8327c3]">Figma</span>
+                        <span class="rounded-full bg-tag-bg py-1 px-3 text-xs font-medium text-accent">UI/UX</span>
+                        <span class="rounded-full bg-[rgba(188,71,73,0.15)] py-1 px-3 text-xs font-medium text-[#BC4749]">Prototyping</span>
+                    </div>
+                </div>
+            </div>
+             <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+                <div class="aspect-video overflow-hidden">
+                    <img alt="Laptop with code and abstract shapes" class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105">
+                </div>
+                <div class="flex flex-col p-6">
+                    <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">CodeGenius - AI Assistant UI</h3>
+                    <p class="mb-4">An interface design for an AI-powered code completion tool, designed to be unobtrusive yet powerful for developers.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="rounded-full bg-[rgba(42,161,152,0.15)] py-1 px-3 text-xs font-medium text-[#2AA198]">UI Design</span>
+                        <span class="rounded-full bg-[rgba(203,75,22,0.15)] py-1 px-3 text-xs font-medium text-[#CB4B16]">UX Research</span>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="mt-8 text-center">
             <a href="/projects/index" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">View All Projects</a>
@@ -198,28 +221,53 @@ import creations from '../data/creations.json';
     <section class="log-overview w-full">
         <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">Log Overview</h2>
         <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
-            {logs.map(log => (
-                <article class="group flex h-full rounded-lg border border-border bg-surface no-underline transition-transform duration-200 ease-out">
-                    <div class="flex flex-col p-6">
-                        <div class="aspect-video overflow-hidden">
-                            <img alt={log.image} class="h-full w-full object-cover transition-transform duration-300 ease-out">
-                        </div>
-                        <p class="mb-2 text-xs text-text-light">{log.category} · {log.readTime}</p>
-                        <h3 class="m-0 mb-3 font-mono text-xl font-bold text-accent transition-colors duration-200">{log.title}</h3>
-                        <p class="mb-6 flex-grow text-[0.95rem] leading-relaxed text-text">{log.description}</p>
-                        <div class="flex flex-wrap gap-2">
-                            {log.tags.map(tag => (
-                                <span class="rounded-full bg-[rgba(106,153,78,0.2)] py-1 px-3 text-xs font-medium text-[#6A994E]">{tag}</span>
-                            ))}
-                        </div>
+            <article class="group flex h-full rounded-lg border border-border bg-surface no-underline transition-transform duration-200 ease-out">
+                <div class="flex flex-col p-6">
+                    <div class="aspect-video overflow-hidden">
+                        <img alt="Abstract code on a screen" class="h-full w-full object-cover transition-transform duration-300 ease-out">
                     </div>
-                </article>
-            ))}
-        </div>
-        <div class="mt-8 text-center">
-            <a href="/thoughts/index" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">View All Posts</a>
-        </div>
-    </section>
+                    <p class="mb-2 text-xs text-text-light">Film Review · 6 min read</p>
+                    <h3 class="m-0 mb-3 font-mono text-xl font-bold text-accent transition-colors duration-200">Dune: A Masterclass in World-Building</h3>
+                    <p class="mb-6 flex-grow text-[0.95rem] leading-relaxed text-text">Denis Villeneuve's adaptation of the sci-fi epic is a cinematic triumph, blending stunning visuals with a deeply resonant narrative. A closer look at what makes it unforgettable.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="rounded-full bg-[rgba(106,153,78,0.2)] py-1 px-3 text-xs font-medium text-[#6A994E]">Film</span>
+                        <span class="rounded-full bg-[rgba(108,113,196,0.15)] py-1 px-3 text-xs font-medium text-[#6C71C4]">Sci-Fi</span>
+                        <span class="rounded-full bg-[rgba(108,117,125,0.2)] py-1 px-3 text-xs font-medium text-[#6c757d]">Review</span>
+                    </div>
+                </div>
+            </article>
+            <article class="group flex h-full rounded-lg border border-border bg-surface no-underline transition-transform duration-200 ease-out">
+                 <div class="flex flex-col p-6">
+                    <div class="aspect-video overflow-hidden">
+                        <img alt="Abstract code on a screen" class="h-full w-full object-cover transition-transform duration-300 ease-out">
+                    </div>
+                    <p class="mb-2 text-xs text-text-light">Tech Review · 8 min read</p>
+                    <h3 class="m-0 mb-3 font-mono text-xl font-bold text-accent transition-colors duration-200">The M4 AstroBook: A Developer's Dream?</h3>
+                    <p class="mb-6 flex-grow text-[0.95rem] leading-relaxed text-text">After a month with Apple's latest hardware, I'm sharing my thoughts on its performance, battery life, and whether it's the ultimate machine for modern web development.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="rounded-full bg-[rgba(0,95,115,0.15)] py-1 px-3 text-xs font-medium text-[#005f73]">Tech</span>
+                        <span class="rounded-full bg-[rgba(147,161,161,0.2)] py-1 px-3 text-xs font-medium text-[#839496]">Apple</span>
+                        <span class="rounded-full bg-[rgba(108,117,125,0.2)] py-1 px-3 text-xs font-medium text-[#6c757d]">Review</span>
+                    </div>
+                </div>
+            </article>
+            <article class="group flex h-full rounded-lg border border-border bg-surface no-underline transition-transform duration-200 ease-out">
+                        <div class="flex flex-col p-6">
+                            <p class="mb-2 text-xs text-text-light">Personal Essay · 5 min read</p>
+                            <h3 class="m-0 mb-3 font-mono text-xl font-bold text-accent transition-colors duration-200">Finding Creative Flow in Augusta</h3>
+                            <p class="mb-6 flex-grow text-[0.95rem] leading-relaxed text-text">Moving away from the hustle of a big city was a creative gamble. Here's how the quiet charm of Martinez and the surrounding area has reshaped my daily process and inspiration.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="rounded-full bg-[rgba(217,91,138,0.15)] py-1 px-3 text-xs font-medium text-[#D95B8A]">Life</span>
+                                <span class="rounded-full bg-[rgba(108,113,196,0.2)] py-1 px-3 text-xs font-medium text-[#6C71C4]">Creativity</span>
+                                <span class="rounded-full bg-[rgba(253,158,116,0.2)] py-1 px-3 text-xs font-medium text-[#E4865B]">Georgia</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="mt-8 text-center">
+                    <a href="/thoughts/index" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">View All Posts</a>
+                </div>
+            </section>
 
     
 
