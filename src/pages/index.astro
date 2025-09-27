@@ -13,12 +13,8 @@ import ProfileCard from '../components/ProfileCard.astro';
     twitterUrl="https://your-website.com/"
     twitterImage="https://your-website.com/social-preview.png"
 >
-    
-
-    
-
-    <div class="py-8">
-        <div class="overflow-hidden rounded-lg border border-border bg-[#2E282A] text-text shadow-lg">
+    <div id="terminal-overlay" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black transition-opacity duration-1000 ease-out opacity-100">
+        <div class="overflow-hidden rounded-lg border border-border bg-[#2E282A] text-text shadow-lg w-11/12 max-w-4xl">
             <div class="flex items-center gap-2 bg-text-light p-2 px-4 text-xs text-bg">
                 <div class="mr-auto flex gap-2">
                     <span class="h-3 w-3 rounded-full" style="background:#ff5f56;"></span>
@@ -39,331 +35,359 @@ import ProfileCard from '../components/ProfileCard.astro';
         </div>
     </div>
 
-    
+    <div id="main-content" style="display: none; opacity: 0; transition: opacity 1s ease-out;">
+        <div class="py-8">
+            <div class="overflow-hidden rounded-lg border border-border bg-[#2E282A] text-text shadow-lg">
+                <div class="flex items-center gap-2 bg-text-light p-2 px-4 text-xs text-bg">
+                    <div class="mr-auto flex gap-2">
+                        <span class="h-3 w-3 rounded-full" style="background:#ff5f56;"></span>
+                        <span class="h-3 w-3 rounded-full" style="background:#ffbd2e;"></span>
+                        <span class="h-3 w-3 rounded-full" style="background:#27c93f;"></span>
+                    </div>
+                    <span>bash</span>
+                </div>
+                <div class="min-h-[200px] p-6">
+                    <p class="m-0 break-all">
+                        <span class="text-[#81a2be]">user@echo</span><span class="text-[#b48ead]">:</span><span class="text-[#a3be8c]">~</span><span class="text-[#b48ead]">$</span>
+                        <span id="typed-text-hero"></span>
+                        <span class="ml-0.5 inline-block w-[0.6em] animate-blink bg-bg"> </span>
+                    </p>
+                    <div class="mt-4 border-l-2 border-accent pl-4" id="terminal-output-hero" style="display: none;">
+                        <h1 class="m-0 mb-2 font-mono font-medium text-heading text-3xl md:text-4xl lg:text-5xl">John Ogletree</h1>
+                        <div class="flex flex-wrap items-center gap-x-6 gap-y-4">
+                            <p class="m-0 text-text-light text-base md:text-lg">Digital Creator. Problem Solver. Lifelong Learner.</p>
+                            <button type="submit" class="w-full inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <hr class="my-4 border-t-2 border-dashed border-accent/50">
+        
 
-    <section class="about-me-section text-text w-full">
-        <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">About Me</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 p-6 rounded-lg border border-border bg-surface shadow-lg">
-            <!-- Image Card (Left Column) -->
-            <div class="flex flex-col items-center justify-center p-4 rounded-lg border border-border bg-surface shadow-md">
-                <div class="relative group">
-                    <img
-                        src="/favicon.svg"
-                        alt="John Ogletree Profile Picture"
-                        class="rounded-full w-48 h-48 object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl"
+        <hr class="my-4 border-t-2 border-dashed border-accent/50">
+
+        <section class="about-me-section text-text w-full">
+            <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">About Me</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 p-6 rounded-lg border border-border bg-surface shadow-lg">
+                <!-- Image Card (Left Column) -->
+                <div class="flex flex-col items-center justify-center p-4 rounded-lg border border-border bg-surface shadow-md">
+                    <div class="relative group">
+                        <img
+                            src="/favicon.svg"
+                            alt="John Ogletree Profile Picture"
+                            class="rounded-full w-48 h-48 object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl"
+                        />
+                        <div class="absolute inset-0 rounded-full ring-4 ring-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
+                    </div>
+                </div>
+                <!-- Profile Content (Right Columns - spans 2 columns on large screens) -->
+                <div class="lg:col-span-2 flex flex-col justify-between flex-grow text-center lg:text-left">
+                    <ProfileCard
+                        name="John Ogletree"
+                        title="Digital Creator & Developer"
+                        description="Passionate about crafting engaging digital experiences with a focus on clean code and user-centric design."
                     />
-                    <div class="absolute inset-0 rounded-full ring-4 ring-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
-                </div>
-            </div>
-            <!-- Profile Content (Right Columns - spans 2 columns on large screens) -->
-            <div class="lg:col-span-2 flex flex-col justify-between flex-grow text-center lg:text-left">
-                <ProfileCard
-                    name="John Ogletree"
-                    title="Digital Creator & Developer"
-                    description="Passionate about crafting engaging digital experiences with a focus on clean code and user-centric design."
-                />
-                <blockquote class="mt-4 text-lg italic text-text-light border-l-4 border-accent pl-4">
-                    "Design is not just what it looks like and feels like. Design is how it works." - Steve Jobs
-                </blockquote>
-                <div class="mt-6 w-full flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 lg:justify-start">
-                    <div class="flex flex-wrap gap-2">
-                        <span class="rounded-full bg-[rgba(224,122,95,0.15)] py-1 px-3 text-xs font-medium text-[#B35F48] transition-all duration-200 ease-in-out hover:scale-110 hover:bg-[#B35F48] hover:text-bg">Astro</span>
-                        <span class="rounded-full bg-[rgba(38,139,210,0.15)] py-1 px-3 text-xs font-medium text-[#268BD2] transition-all duration-200 ease-in-out hover:scale-110 hover:bg-[#268BD2] hover:text-bg">React</span>
-                        <span class="rounded-full bg-[rgba(181,137,0,0.2)] py-1 px-3 text-xs font-medium text-[#b58900] transition-all duration-200 ease-in-out hover:scale-110 hover:bg-[#b58900] hover:text-bg">JavaScript</span>
+                    <blockquote class="mt-4 text-lg italic text-text-light border-l-4 border-accent pl-4">
+                        "Design is not just what it looks like and feels like. Design is how it works." - Steve Jobs
+                    </blockquote>
+                    <div class="mt-6 w-full flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 lg:justify-start">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="rounded-full bg-[rgba(224,122,95,0.15)] py-1 px-3 text-xs font-medium text-[#B35F48] transition-all duration-200 ease-in-out hover:scale-110 hover:bg-[#B35F48] hover:text-bg">Astro</span>
+                            <span class="rounded-full bg-[rgba(38,139,210,0.15)] py-1 px-3 text-xs font-medium text-[#268BD2] transition-all duration-200 ease-in-out hover:scale-110 hover:bg-[#268BD2] hover:text-bg">React</span>
+                            <span class="rounded-full bg-[rgba(181,137,0,0.2)] py-1 px-3 text-xs font-medium text-[#b58900] transition-all duration-200 ease-in-out hover:scale-110 hover:bg-[#b58900] hover:text-bg">JavaScript</span>
+                        </div>
+                        <Button href="/profile" text="Learn More" variant="secondary">
+                        </Button>
                     </div>
-                    <Button href="/profile" text="Learn More" variant="secondary">
-                    </Button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <hr class="my-4 border-t-2 border-dashed border-accent/50">
+        <hr class="my-4 border-t-2 border-dashed border-accent/50">
 
-    <section class="services-overview w-full">
-        <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">Capabilities Overview</h2>
-        <div class="flex flex-wrap justify-center gap-6">
-            <div class="flex flex-col items-center text-center gap-4 rounded-lg border border-border bg-surface p-8 transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
-                <div class="w-12 h-12 text-accent">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                </div>
-                <h3 class="m-0 font-mono text-xl font-bold text-accent">Web Design & Development</h3>
-                <p class="flex-grow text-[0.95rem] leading-relaxed text-text-light">Crafting responsive, high-performance websites from scratch. I focus on clean code and user-centric design to build digital experiences that work beautifully on any device.</p>
-            </div>
-            <div class="flex flex-col items-center text-center gap-4 rounded-lg border border-border bg-surface p-8 transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
-                <div class="w-12 h-12 text-accent">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
-                </div>
-                <h3 class="m-0 font-mono text-xl font-bold text-accent">Interactive Prototyping</h3>
-                <p class="flex-grow text-[0.95rem] leading-relaxed text-text-light">Bringing ideas to life with high-fidelity, clickable prototypes. This crucial step allows for user testing and validation before a single line of code is written.</p>
-            </div>
-            <div class="flex flex-col items-center text-center gap-4 rounded-lg border border-border bg-surface p-8 transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
-                <div class="w-12 h-12 text-accent">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.73 18a2.64 2.64 0 0 0-3.72 0L12 24l-6.01-6.01a2.64 2.64 0 0 0-3.72 0L0 20.27l6.01-6.01a2.64 2.64 0 0 0 0-3.72L0 4.52l2.27-2.27a2.64 2.64 0 0 0 3.72 0L12 0l6.01 6.01a2.64 2.64 0 0 0 3.72 0L24 8.28l-6.01 6.01a2.64 2.64 0 0 0 0 3.72l6.01 6.01z"></path></svg>
-                </div>
-                <h3 class="m-0 font-mono text-xl font-bold text-accent">Digital Strategy & Consultation</h3>
-                <p class="mb-4">Leveraging user research and analytics to help you make informed decisions. I provide insights that align your digital presence with your business goals for measurable success.</p>
-            </div>
-            <div class="mt-8 text-center w-full">
-                <a href="/services/index" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">View All Services</a>
-            </div>
-        </div>
-    </section>
-
-    
-
-    <hr class="my-4 border-t-2 border-dashed border-accent/50">
-
-    <section class="projects-overview w-full">
-        <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">Creations Overview</h2>
-        <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
-            <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
-                <div class="aspect-video overflow-hidden">
-                    <img alt="Abstract code on a screen" class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105">
-                </div>
-                <div class="flex flex-col p-6 flex-grow">
-                    <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">Echo - Personal Portfolio</h3>
-                    <p class="mb-4 flex-grow text-[0.95rem] leading-relaxed text-text-light">The very website you are on. A fully responsive personal hub built with Astro, showcasing a blend of design and modern web technologies.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="rounded-full bg-[rgba(224,122,95,0.15)] py-1 px-3 text-xs font-medium text-[#B35F48]">Astro</span>
-                        <span class="rounded-full bg-[rgba(38,139,210,0.15)] py-1 px-3 text-xs font-medium text-[#268BD2]">CSS</span>
-                        <span class="rounded-full bg-[rgba(181,137,0,0.2)] py-1 px-3 text-xs font-medium text-[#b58900]">JavaScript</span>
+        <section class="services-overview w-full">
+            <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">Capabilities Overview</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="flex flex-col items-center text-center gap-4 rounded-lg border border-border bg-surface p-8 transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+                    <div class="w-12 h-12 text-accent">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
                     </div>
-                    <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text w-full">View Project</a>
+                    <h3 class="m-0 font-mono text-xl font-bold text-accent">Web Design & Development</h3>
+                    <p class="flex-grow text-[0.95rem] leading-relaxed text-text-light">Crafting responsive, high-performance websites from scratch. I focus on clean code and user-centric design to build digital experiences that work beautifully on any device.</p>
+                </div>
+                <div class="flex flex-col items-center text-center gap-4 rounded-lg border border-border bg-surface p-8 transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+                    <div class="w-12 h-12 text-accent">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+                    </div>
+                    <h3 class="m-0 font-mono text-xl font-bold text-accent">Interactive Prototyping</h3>
+                    <p class="flex-grow text-[0.95rem] leading-relaxed text-text-light">Bringing ideas to life with high-fidelity, clickable prototypes. This crucial step allows for user testing and validation before a single line of code is written.</p>
+                </div>
+                <div class="flex flex-col items-center text-center gap-4 rounded-lg border border-border bg-surface p-8 transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+                    <div class="w-12 h-12 text-accent">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.73 18a2.64 2.64 0 0 0-3.72 0L12 24l-6.01-6.01a2.64 2.64 0 0 0-3.72 0L0 20.27l6.01-6.01a2.64 2.64 0 0 0 0-3.72L0 4.52l2.27-2.27a2.64 2.64 0 0 0 3.72 0L12 0l6.01 6.01a2.64 2.64 0 0 0 3.72 0L24 8.28l-6.01 6.01a2.64 2.64 0 0 0 0 3.72l6.01 6.01z"></path></svg>
+                    </div>
+                    <h3 class="m-0 font-mono text-xl font-bold text-accent">Digital Strategy & Consultation</h3>
+                    <p class="mb-4">Leveraging user research and analytics to help you make informed decisions. I provide insights that align your digital presence with your business goals for measurable success.</p>
+                </div>
+                <div class="mt-8 text-center w-full">
+                    <a href="/services/index" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">View All Services</a>
                 </div>
             </div>
-             <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
-                <div class="aspect-video overflow-hidden">
-                    <img alt="Analytics dashboard with charts and graphs" class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105">
-                </div>
-                <div class="flex flex-col p-6 flex-grow">
-                    <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">QuantumLeap - SaaS Dashboard</h3>
-                    <p class="mb-4 flex-grow text-[0.95rem] leading-relaxed text-text-light">A UI/UX concept for a next-generation analytics platform, focusing on data visualization and intuitive user workflows.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="rounded-full bg-[rgba(163,55,240,0.1)] py-1 px-3 text-xs font-medium text-[#8327c3]">Figma</span>
-                        <span class="rounded-full bg-tag-bg py-1 px-3 text-xs font-medium text-accent">UI/UX</span>
-                        <span class="rounded-full bg-[rgba(188,71,73,0.15)] py-1 px-3 text-xs font-medium text-[#BC4749]">Prototyping</span>
+        </section>
+
+        
+
+        <hr class="my-4 border-t-2 border-dashed border-accent/50">
+
+        <section class="projects-overview w-full">
+            <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">Creations Overview</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
+                <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+                    <div class="aspect-video overflow-hidden">
+                        <img alt="Abstract code on a screen" class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105">
                     </div>
-                    <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text w-full">View Project</a>
+                    <div class="flex flex-col p-6 flex-grow">
+                        <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">Echo - Personal Portfolio</h3>
+                        <p class="mb-4 flex-grow text-[0.95rem] leading-relaxed text-text-light">The very website you are on. A fully responsive personal hub built with Astro, showcasing a blend of design and modern web technologies.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="rounded-full bg-[rgba(224,122,95,0.15)] py-1 px-3 text-xs font-medium text-[#B35F48]">Astro</span>
+                            <span class="rounded-full bg-[rgba(38,139,210,0.15)] py-1 px-3 text-xs font-medium text-[#268BD2]">CSS</span>
+                            <span class="rounded-full bg-[rgba(181,137,0,0.2)] py-1 px-3 text-xs font-medium text-[#b58900]">JavaScript</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text w-full">View Project</a>
+                    </div>
+                </div>
+                <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+                    <div class="aspect-video overflow-hidden">
+                        <img alt="Analytics dashboard with charts and graphs" class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105">
+                    </div>
+                    <div class="flex flex-col p-6 flex-grow">
+                        <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">QuantumLeap - SaaS Dashboard</h3>
+                        <p class="mb-4 flex-grow text-[0.95rem] leading-relaxed text-text-light">A UI/UX concept for a next-generation analytics platform, focusing on data visualization and intuitive user workflows.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="rounded-full bg-[rgba(163,55,240,0.1)] py-1 px-3 text-xs font-medium text-[#8327c3]">Figma</span>
+                            <span class="rounded-full bg-tag-bg py-1 px-3 text-xs font-medium text-accent">UI/UX</span>
+                            <span class="rounded-full bg-[rgba(188,71,73,0.15)] py-1 px-3 text-xs font-medium text-[#BC4749]">Prototyping</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text w-full">View Project</a>
+                    </div>
+                </div>
+                <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+                    <div class="aspect-video overflow-hidden">
+                        <img alt="Laptop with code and abstract shapes" class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105">
+                    </div>
+                    <div class="flex flex-col p-6 flex-grow">
+                        <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">CodeGenius - AI Assistant UI</h3>
+                        <p class="mb-4 flex-grow text-[0.95rem] leading-relaxed text-text-light">An interface design for an AI-powered code completion tool, designed to be unobtrusive yet powerful for developers.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="rounded-full bg-[rgba(42,161,152,0.15)] py-1 px-3 text-xs font-medium text-[#2AA198]">UI Design</span>
+                            <span class="rounded-full bg-[rgba(203,75,22,0.15)] py-1 px-3 text-xs font-medium text-[#CB4B16]">UX Research</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text w-full">View Project</a>
+                    </div>
                 </div>
             </div>
-             <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
-                <div class="aspect-video overflow-hidden">
-                    <img alt="Laptop with code and abstract shapes" class="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105">
+            <div class="mt-8 text-center">
+                <a href="/projects/index" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">View All Projects</a>
+            </div>
+        </section>
+
+        
+
+        <hr class="my-4 border-t-2 border-dashed border-accent/50">
+
+        <section class="forms-section w-full">
+            <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">Connect</h2>
+            <div class="grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
+                <div class="rounded-lg border border-border bg-surface p-8">
+                    <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">Contact Me</h3>
+                    <p class="mb-4">Have a question or a project in mind? Let's talk. I'm always open to discussing new ideas and opportunities.</p>
+                    <form action="#" method="POST">
+                        <div class="mb-6">
+                            <label for="name" class="mb-2 block text-sm font-medium text-text">Name</label>
+                            <input type="text" id="name" name="name" required class="box-border w-full rounded-md border border-border bg-surface p-3 font-mono text-base text-text focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="mb-2 block text-sm font-medium text-text">Email</label>
+                            <input type="email" id="email" name="email" required class="box-border w-full rounded-md border border-border bg-surface p-3 font-mono text-base text-text focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="mb-2 block text-sm font-medium text-text">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="box-border w-full min-h-[120px] resize-y rounded-md border border-border bg-surface p-3 font-mono text-base text-text focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50"></textarea>
+                        </div>
+                        <button type="submit" class="w-full inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">Send Message</button>
+                    </form>
                 </div>
-                <div class="flex flex-col p-6 flex-grow">
-                    <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">CodeGenius - AI Assistant UI</h3>
-                    <p class="mb-4 flex-grow text-[0.95rem] leading-relaxed text-text-light">An interface design for an AI-powered code completion tool, designed to be unobtrusive yet powerful for developers.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="rounded-full bg-[rgba(42,161,152,0.15)] py-1 px-3 text-xs font-medium text-[#2AA198]">UI Design</span>
-                        <span class="rounded-full bg-[rgba(203,75,22,0.15)] py-1 px-3 text-xs font-medium text-[#CB4B16]">UX Research</span>
-                    </div>
-                    <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text w-full">View Project</a>
+                <div class="rounded-lg border border-border bg-surface p-8">
+                    <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">Join My Newsletter</h3>
+                    <p class="mb-6 text-[0.95rem] leading-relaxed text-text-light">Subscribe to receive updates on my latest projects, articles, and design resources directly in your inbox. No spam, ever.</p>
+                    <form action="#" method="POST">
+                        <div class="mb-6">
+                            <label for="newsletter-email" class="mb-2 block text-sm font-medium text-text">Email Address</label>
+                            <input type="email" id="newsletter-email" name="email" required class="box-border w-full rounded-md border border-border bg-surface p-3 font-mono text-base text-text focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50">
+                        </div>
+                        <button type="submit" class="w-full inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">Subscribe</button>
+                    </form>
+                    <p class="mt-6 mb-0 text-center text-xs text-text-light">Your privacy is important. I'll never share your email.</p>
                 </div>
             </div>
-        </div>
-        <div class="mt-8 text-center">
-            <a href="/projects/index" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">View All Projects</a>
-        </div>
-    </section>
+        </section>
 
-    
+        
 
-    <hr class="my-4 border-t-2 border-dashed border-accent/50">
+        <hr class="my-4 border-t-2 border-dashed border-accent/50">
 
-    <section class="forms-section w-full">
-        <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">Connect</h2>
-        <div class="grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
-            <div class="rounded-lg border border-border bg-surface p-8">
-                <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">Contact Me</h3>
-                <p class="mb-4">Have a question or a project in mind? Let's talk. I'm always open to discussing new ideas and opportunities.</p>
-                <form action="#" method="POST">
-                    <div class="mb-6">
-                        <label for="name" class="mb-2 block text-sm font-medium text-text">Name</label>
-                        <input type="text" id="name" name="name" required class="box-border w-full rounded-md border border-border bg-surface p-3 font-mono text-base text-text focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50">
+        <section class="log-overview w-full">
+            <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">Log Overview</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
+                <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+                    <div class="aspect-video overflow-hidden">
+                        <img alt="Abstract code on a screen" class="h-full w-full object-cover transition-transform duration-300 ease-out">
                     </div>
-                    <div class="mb-6">
-                        <label for="email" class="mb-2 block text-sm font-medium text-text">Email</label>
-                        <input type="email" id="email" name="email" required class="box-border w-full rounded-md border border-border bg-surface p-3 font-mono text-base text-text focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50">
+                    <div class="flex flex-col p-6 flex-grow">
+                        <p class="mb-2 text-xs text-text-light">Film Review · 6 min read</p>
+                        <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">Dune: A Masterclass in World-Building</h3>
+                        <p class="mb-4 flex-grow text-[0.95rem] leading-relaxed text-text-light">Denis Villeneuve's adaptation of the sci-fi epic is a cinematic triumph, blending stunning visuals with a deeply resonant narrative. A closer look at what makes it unforgettable.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="rounded-full bg-[rgba(106,153,78,0.2)] py-1 px-3 text-xs font-medium text-[#6A994E]">Film</span>
+                            <span class="rounded-full bg-[rgba(108,113,196,0.15)] py-1 px-3 text-xs font-medium text-[#6C71C4]">Sci-Fi</span>
+                            <span class="rounded-full bg-[rgba(108,117,125,0.2)] py-1 px-3 text-xs font-medium text-[#6c757d]">Review</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text w-full">View Post</a>
                     </div>
-                    <div class="mb-6">
-                        <label for="message" class="mb-2 block text-sm font-medium text-text">Message</label>
-                        <textarea id="message" name="message" rows="5" required class="box-border w-full min-h-[120px] resize-y rounded-md border border-border bg-surface p-3 font-mono text-base text-text focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50"></textarea>
-                    </div>
-                    <button type="submit" class="w-full inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">Send Message</button>
-                </form>
-            </div>
-            <div class="rounded-lg border border-border bg-surface p-8">
-                <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">Join My Newsletter</h3>
-                <p class="mb-6 text-[0.95rem] leading-relaxed text-text-light">Subscribe to receive updates on my latest projects, articles, and design resources directly in your inbox. No spam, ever.</p>
-                <form action="#" method="POST">
-                    <div class="mb-6">
-                        <label for="newsletter-email" class="mb-2 block text-sm font-medium text-text">Email Address</label>
-                        <input type="email" id="newsletter-email" name="email" required class="box-border w-full rounded-md border border-border bg-surface p-3 font-mono text-base text-text focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/50">
-                    </div>
-                    <button type="submit" class="w-full inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">Subscribe</button>
-                </form>
-                <p class="mt-6 mb-0 text-center text-xs text-text-light">Your privacy is important. I'll never share your email.</p>
-            </div>
-        </div>
-    </section>
-
-    
-
-    <hr class="my-4 border-t-2 border-dashed border-accent/50">
-
-    <section class="log-overview w-full">
-        <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">Log Overview</h2>
-        <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
-            <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
-                <div class="aspect-video overflow-hidden">
-                    <img alt="Abstract code on a screen" class="h-full w-full object-cover transition-transform duration-300 ease-out">
                 </div>
-                <div class="flex flex-col p-6 flex-grow">
-                    <p class="mb-2 text-xs text-text-light">Film Review · 6 min read</p>
-                    <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">Dune: A Masterclass in World-Building</h3>
-                    <p class="mb-4 flex-grow text-[0.95rem] leading-relaxed text-text-light">Denis Villeneuve's adaptation of the sci-fi epic is a cinematic triumph, blending stunning visuals with a deeply resonant narrative. A closer look at what makes it unforgettable.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="rounded-full bg-[rgba(106,153,78,0.2)] py-1 px-3 text-xs font-medium text-[#6A994E]">Film</span>
-                        <span class="rounded-full bg-[rgba(108,113,196,0.15)] py-1 px-3 text-xs font-medium text-[#6C71C4]">Sci-Fi</span>
-                        <span class="rounded-full bg-[rgba(108,117,125,0.2)] py-1 px-3 text-xs font-medium text-[#6c757d]">Review</span>
+                <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+                    <div class="aspect-video overflow-hidden">
+                        <img alt="Abstract code on a screen" class="h-full w-full object-cover transition-transform duration-300 ease-out">
                     </div>
-                    <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text w-full">View Post</a>
+                    <div class="flex flex-col p-6 flex-grow">
+                        <p class="mb-2 text-xs text-text-light">Tech Review · 8 min read</p>
+                        <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">The M4 AstroBook: A Developer's Dream?</h3>
+                        <p class="mb-4 flex-grow text-[0.95rem] leading-relaxed text-text-light">After a month with Apple's latest hardware, I'm sharing my thoughts on its performance, battery life, and whether it's the ultimate machine for modern web development.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="rounded-full bg-[rgba(0,95,115,0.15)] py-1 px-3 text-xs font-medium text-[#005f73]">Tech</span>
+                            <span class="rounded-full bg-[rgba(147,161,161,0.2)] py-1 px-3 text-xs font-medium text-[#839496]">Apple</span>
+                            <span class="rounded-full bg-[rgba(108,117,125,0.2)] py-1 px-3 text-xs font-medium text-[#6c757d]">Review</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text w-full">View Post</a>
+                    </div>
+                </div>
+                <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+                    <div class="aspect-video overflow-hidden">
+                        <img alt="Abstract code on a screen" class="h-full w-full object-cover transition-transform duration-300 ease-out">
+                    </div>
+                    <div class="flex flex-col p-6 flex-grow">
+                        <p class="mb-2 text-xs text-text-light">Personal Essay · 5 min read</p>
+                        <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">Finding Creative Flow in Augusta</h3>
+                        <p class="mb-4 flex-grow text-[0.95rem] leading-relaxed text-text-light">Moving away from the hustle of a big city was a creative gamble. Here's how the quiet charm of Martinez and the surrounding area has reshaped my daily process and inspiration.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="rounded-full bg-[rgba(217,91,138,0.15)] py-1 px-3 text-xs font-medium text-[#D95B8A]">Life</span>
+                            <span class="rounded-full bg-[rgba(108,113,196,0.2)] py-1 px-3 text-xs font-medium text-[#6C71C4]">Creativity</span>
+                            <span class="rounded-full bg-[rgba(253,158,116,0.2)] py-1 px-3 text-xs font-medium text-[#E4865B]">Georgia</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text w-full">View Post</a>
+                    </div>
                 </div>
             </div>
-            <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
-                <div class="aspect-video overflow-hidden">
-                    <img alt="Abstract code on a screen" class="h-full w-full object-cover transition-transform duration-300 ease-out">
-                </div>
-                <div class="flex flex-col p-6 flex-grow">
-                    <p class="mb-2 text-xs text-text-light">Tech Review · 8 min read</p>
-                    <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">The M4 AstroBook: A Developer's Dream?</h3>
-                    <p class="mb-4 flex-grow text-[0.95rem] leading-relaxed text-text-light">After a month with Apple's latest hardware, I'm sharing my thoughts on its performance, battery life, and whether it's the ultimate machine for modern web development.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="rounded-full bg-[rgba(0,95,115,0.15)] py-1 px-3 text-xs font-medium text-[#005f73]">Tech</span>
-                        <span class="rounded-full bg-[rgba(147,161,161,0.2)] py-1 px-3 text-xs font-medium text-[#839496]">Apple</span>
-                        <span class="rounded-full bg-[rgba(108,117,125,0.2)] py-1 px-3 text-xs font-medium text-[#6c757d]">Review</span>
-                    </div>
-                    <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text w-full">View Post</a>
-                </div>
+            <div class="mt-8 text-center">
+                <a href="/thoughts/index" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">View All Posts</a>
             </div>
-            <div class="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
-                <div class="aspect-video overflow-hidden">
-                    <img alt="Abstract code on a screen" class="h-full w-full object-cover transition-transform duration-300 ease-out">
-                </div>
-                <div class="flex flex-col p-6 flex-grow">
-                    <p class="mb-2 text-xs text-text-light">Personal Essay · 5 min read</p>
-                    <h3 class="m-0 mb-2 font-mono text-xl font-bold text-accent">Finding Creative Flow in Augusta</h3>
-                    <p class="mb-4 flex-grow text-[0.95rem] leading-relaxed text-text-light">Moving away from the hustle of a big city was a creative gamble. Here's how the quiet charm of Martinez and the surrounding area has reshaped my daily process and inspiration.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="rounded-full bg-[rgba(217,91,138,0.15)] py-1 px-3 text-xs font-medium text-[#D95B8A]">Life</span>
-                        <span class="rounded-full bg-[rgba(108,113,196,0.2)] py-1 px-3 text-xs font-medium text-[#6C71C4]">Creativity</span>
-                        <span class="rounded-full bg-[rgba(253,158,116,0.2)] py-1 px-3 text-xs font-medium text-[#E4865B]">Georgia</span>
+        </section>
+
+        
+
+        <hr class="my-4 border-t-2 border-dashed border-accent/50">
+
+        <section class="resume-overview w-full">
+            <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">Credentials Overview</h2>
+            <div class="grid grid-cols-1 gap-10 lg:grid-cols-2">
+                <div class="rounded-lg border border-border bg-surface p-6">
+                    <h3 class="m-0 mb-6 font-mono text-base font-bold uppercase tracking-wider text-accent">Experience</h3>
+                    <div class="relative border-l-2 border-border pb-8 pl-6 last:pb-2 before:absolute before:top-[6px] before:left-[-6px] before:h-2.5 before:w-2.5 before:rounded-full before:border-2 before:border-bg before:bg-accent before:content-['']">
+                        <h4 class="m-0 text-lg leading-tight text-text">Senior Product Designer</h4>
+                        <p class="mt-1 mb-0 text-sm text-text-light">Innovate Inc. | 2022 - Present</p>
                     </div>
-                    <a href="#" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-2 px-4 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text w-full">View Post</a>
-                </div>
-            </div>
-                </div>
-                <div class="mt-8 text-center">
-                    <a href="/thoughts/index" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">View All Posts</a>
-                </div>
-            </section>
-
-    
-
-            <hr class="my-4 border-t-2 border-dashed border-accent/50">
-
-            <section class="resume-overview w-full">
-                <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">Credentials Overview</h2>
-                <div class="grid grid-cols-1 gap-10 lg:grid-cols-2">
-                    <div class="rounded-lg border border-border bg-surface p-6">
-                        <h3 class="m-0 mb-6 font-mono text-base font-bold uppercase tracking-wider text-accent">Experience</h3>
+                    <div class="relative border-l-2 border-border pb-8 pl-6 last:pb-2 before:absolute before:top-[6px] before:left-[-6px] before:h-2.5 before:w-2.5 before:rounded-full before:border-2 before:border-bg before:bg-accent before:content-['']">
+                        <h4 class="m-0 text-lg leading-tight text-text">UX/UI Designer</h4>
+                        <p class="mt-1 mb-0 text-sm text-text-light">Creative Solutions | 2019 - 2022</p>
+                    </div>
                         <div class="relative border-l-2 border-border pb-8 pl-6 last:pb-2 before:absolute before:top-[6px] before:left-[-6px] before:h-2.5 before:w-2.5 before:rounded-full before:border-2 before:border-bg before:bg-accent before:content-['']">
-                            <h4 class="m-0 text-lg leading-tight text-text">Senior Product Designer</h4>
-                            <p class="mt-1 mb-0 text-sm text-text-light">Innovate Inc. | 2022 - Present</p>
-                        </div>
-                        <div class="relative border-l-2 border-border pb-8 pl-6 last:pb-2 before:absolute before:top-[6px] before:left-[-6px] before:h-2.5 before:w-2.5 before:rounded-full before:border-2 before:border-bg before:bg-accent before:content-['']">
-                            <h4 class="m-0 text-lg leading-tight text-text">UX/UI Designer</h4>
-                            <p class="mt-1 mb-0 text-sm text-text-light">Creative Solutions | 2019 - 2022</p>
-                        </div>
-                         <div class="relative border-l-2 border-border pb-8 pl-6 last:pb-2 before:absolute before:top-[6px] before:left-[-6px] before:h-2.5 before:w-2.5 before:rounded-full before:border-2 before:border-bg before:bg-accent before:content-['']">
-                            <h4 class="m-0 text-lg leading-tight text-text">Junior Web Developer</h4>
-                            <p class="mt-1 mb-0 text-sm text-text-light">Tech Forward LLC | 2018 - 2019</p>
-                        </div>
+                        <h4 class="m-0 text-lg leading-tight text-text">Junior Web Developer</h4>
+                        <p class="mt-1 mb-0 text-sm text-text-light">Tech Forward LLC | 2018 - 2019</p>
                     </div>
-                    <div class="rounded-lg border border-border bg-surface p-6">
-                        <h3 class="m-0 mb-6 font-mono text-base font-bold uppercase tracking-wider text-accent">Education</h3>
+                </div>
+                <div class="rounded-lg border border-border bg-surface p-6">
+                    <h3 class="m-0 mb-6 font-mono text-base font-bold uppercase tracking-wider text-accent">Education</h3>
+                    <div class="relative border-l-2 border-border pb-8 pl-6 last:pb-2 before:absolute before:top-[6px] before:left-[-6px] before:h-2.5 before:w-2.5 before:rounded-full before:border-2 before:border-bg before:bg-accent before:content-['']">
+                        <h4 class="m-0 text-lg leading-tight text-text">B.S. in Computer Science</h4>
+                        <p class="mt-1 mb-0 text-sm text-text-light">Georgia Institute of Technology | 2018</p>
+                    </div>
+                    <h3 class="m-0 mb-6 font-mono text-base font-bold uppercase tracking-wider text-accent">Awards</h3>
                         <div class="relative border-l-2 border-border pb-8 pl-6 last:pb-2 before:absolute before:top-[6px] before:left-[-6px] before:h-2.5 before:w-2.5 before:rounded-full before:border-2 before:border-bg before:bg-accent before:content-['']">
-                            <h4 class="m-0 text-lg leading-tight text-text">B.S. in Computer Science</h4>
-                            <p class="mt-1 mb-0 text-sm text-text-light">Georgia Institute of Technology | 2018</p>
-                        </div>
-                        <h3 class="m-0 mb-6 font-mono text-base font-bold uppercase tracking-wider text-accent">Awards</h3>
-                         <div class="relative border-l-2 border-border pb-8 pl-6 last:pb-2 before:absolute before:top-[6px] before:left-[-6px] before:h-2.5 before:w-2.5 before:rounded-full before:border-2 before:border-bg before:bg-accent before:content-['']">
-                            <h4 class="m-0 text-lg leading-tight text-text">"Best UI" Designathon</h4>
-                            <p class="mt-1 mb-0 text-sm text-text-light">Awwwards Interactive | 2023</p>
+                        <h4 class="m-0 text-lg leading-tight text-text">"Best UI" Designathon</h4>
+                        <p class="mt-1 mb-0 text-sm text-text-light">Awwwards Interactive | 2023</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <a href="/resume/index" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">View Full Résumé</a>
+            </div>
+        </section>
+
+        
+
+        <hr class="my-4 border-t-2 border-dashed border-accent/50">
+
+        <section class="faq-section w-full">
+            <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="accordion-item rounded-lg border border-border bg-surface hover:bg-surface-light transition-colors duration-200">
+                    <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading focus:outline-none" data-accordion-toggle>
+                        <span>Are you available for new projects?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out" data-accordion-content>
+                        <div class="p-6 pt-0">
+                            <p class="mb-4 text-text-light">Yes, I am currently open to exciting new freelance projects and contract opportunities. Whether it's a fresh website, a UI/UX overhaul, or a digital strategy consultation, I'd love to hear about your vision. Let's connect!</p>
                         </div>
                     </div>
                 </div>
-                <div class="mt-8 text-center">
-                    <a href="/resume/index" class="inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">View Full Résumé</a>
+                <div class="accordion-item rounded-lg border border-border bg-surface hover:bg-surface-light transition-colors duration-200">
+                    <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading focus:outline-none" data-accordion-toggle>
+                        <span>What technologies and design trends excite you most?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out" data-accordion-content>
+                        <div class="p-6 pt-0">
+                            <p class="text-text-light">I'm particularly excited about the evolution of edge computing and the growing capabilities of modern web frameworks like Astro and SvelteKit. On the design front, I'm closely following the advancements in variable fonts and generative AI tools, always looking for ways to integrate cutting-edge solutions into my work.</p>
+                        </div>
+                    </div>
                 </div>
-            </section>
-
-    
-
-            <hr class="my-4 border-t-2 border-dashed border-accent/50">
-
-            <section class="faq-section w-full">
-                <h2 class="m-0 mb-6 border-b border-border pb-2 font-mono font-medium text-heading text-xl before:mr-2 before:font-normal before:text-text-light before:content-['##'] md:text-2xl">Frequently Asked Questions</h2>
-                <div class="space-y-4">
-                    <div class="accordion-item rounded-lg border border-border bg-surface hover:bg-surface-light transition-colors duration-200">
-                        <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading focus:outline-none" data-accordion-toggle>
-                            <span>Are you available for new projects?</span>
-                            <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out" data-accordion-content>
-                            <div class="p-6 pt-0">
-                                <p class="mb-4 text-text-light">Yes, I am currently open to exciting new freelance projects and contract opportunities. Whether it's a fresh website, a UI/UX overhaul, or a digital strategy consultation, I'd love to hear about your vision. Let's connect!</p>
-                            </div>
+                <div class="accordion-item rounded-lg border border-border bg-surface hover:bg-surface-light transition-colors duration-200">
+                    <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading focus:outline-none" data-accordion-toggle>
+                        <span>Where are you located and do you work remotely?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out" data-accordion-content>
+                        <div class="p-6 pt-0">
+                            <p class="text-text-light">I am based in Martinez, Georgia, and am available for remote work globally. I'm also open to hybrid opportunities in the Augusta metropolitan area, enjoying the best of both worlds.</p>
                         </div>
                     </div>
-                    <div class="accordion-item rounded-lg border border-border bg-surface hover:bg-surface-light transition-colors duration-200">
-                        <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading focus:outline-none" data-accordion-toggle>
-                            <span>What technologies and design trends excite you most?</span>
-                            <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out" data-accordion-content>
-                            <div class="p-6 pt-0">
-                                <p class="text-text-light">I'm particularly excited about the evolution of edge computing and the growing capabilities of modern web frameworks like Astro and SvelteKit. On the design front, I'm closely following the advancements in variable fonts and generative AI tools, always looking for ways to integrate cutting-edge solutions into my work.</p>
-                            </div>
+                </div>
+                <div class="accordion-item rounded-lg border border-border bg-surface hover:bg-surface-light transition-colors duration-200">
+                    <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading focus:outline-none" data-accordion-toggle>
+                        <span>Can we see more of your work?</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out" data-accordion-content>
+                        <div class="p-6 pt-0">
+                            <p class="text-text-light">Absolutely! The "Creations Overview" on this page is just a small sample. You can view a more extensive collection of my work on the dedicated <a href="/projects/index" class="text-accent hover:underline">creations page</a>. Feel free to explore and get a deeper insight into my projects.</p>
                         </div>
                     </div>
-                    <div class="accordion-item rounded-lg border border-border bg-surface hover:bg-surface-light transition-colors duration-200">
-                        <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading focus:outline-none" data-accordion-toggle>
-                            <span>Where are you located and do you work remotely?</span>
-                            <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out" data-accordion-content>
-                            <div class="p-6 pt-0">
-                                <p class="text-text-light">I am based in Martinez, Georgia, and am available for remote work globally. I'm also open to hybrid opportunities in the Augusta metropolitan area, enjoying the best of both worlds.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item rounded-lg border border-border bg-surface hover:bg-surface-light transition-colors duration-200">
-                        <button class="accordion-header flex w-full items-center justify-between p-6 text-lg font-bold text-accent hover:text-heading focus:outline-none" data-accordion-toggle>
-                            <span>Can we see more of your work?</span>
-                            <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="accordion-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out" data-accordion-content>
-                            <div class="p-6 pt-0">
-                                <p class="text-text-light">Absolutely! The "Creations Overview" on this page is just a small sample. You can view a more extensive collection of my work on the dedicated <a href="/projects/index" class="text-accent hover:underline">creations page</a>. Feel free to explore and get a deeper insight into my projects.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
+                </div>
+                
 
 </Layout>
 <script>

@@ -1,17 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     const typedTextSpan = document.getElementById("typed-text");
     const terminalOutputDiv = document.getElementById("terminal-output");
-    if (!typedTextSpan || !terminalOutputDiv) return;
+    const terminalOverlay = document.getElementById("terminal-overlay");
+    const mainContent = document.getElementById("main-content");
+
+    if (!typedTextSpan || !terminalOutputDiv || !terminalOverlay || !mainContent) return;
 
     const commands = [
-        "systemctl start echo-service.target",
-        "echo 'Accessing secure logs...'",
-        "grep -r 'critical' /var/log/echo-system/",
-        "cat /etc/echo-motd"
+        "boot --verbose --init-system",
+        "fsck -a /dev/echo0",
+        "systemctl status echo-core.service",
+        "echo 'Welcome, Operator. System online.'"
     ];
     let commandIndex = 0;
-    const typeSpeed = 70; // Faster typing for commands
-    const outputDelay = 800; // Delay before showing output
+    const typeSpeed = 50; // Typing speed
+    const outputDelay = 1000; // Delay before showing output
 
     const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -39,58 +42,73 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const runSequence = async () => {
-        // Initial command
+        // Initial boot command
         await sleep(500);
         await typeCommand(commands[commandIndex]);
         commandIndex++;
         await sleep(outputDelay);
 
-        // First output
         await displayOutput(`
-            <p class="text-green-400">echo-service.target loaded successfully.</p>
-            <p class="text-yellow-400">Warning: Non-critical system log overflow detected. Auto-purging...</p>
-            <p class="text-blue-400">Establishing secure connection to PXLTR3 mainframe...</p>
+            <p class="text-gray-400">BIOS: Initializing...</p>
+            <p class="text-gray-400">RAM: 16384MB OK</p>
+            <p class="text-gray-400">CPU: Intel(R) Core(TM) i9-9900K CPU @ 3.60GHz</p>
+            <p class="text-green-400">Booting from primary drive...</p>
         `);
         await sleep(2000);
 
-        // Second command
+        // Filesystem check
         await typeCommand(commands[commandIndex]);
         commandIndex++;
         await sleep(outputDelay);
 
-        // Second output
         await displayOutput(`
-            <p class="text-red-400">ERROR: Access denied. Insufficient privileges for /var/log/echo-system/.</p>
-            <p class="text-gray-400">Attempting alternative access route...</p>
+            <p class="text-green-400">/dev/echo0: clean, 123456/789012 files, 9876543/12345678 blocks</p>
+            <p class="text-green-400">Filesystem check complete. No errors found.</p>
         `);
         await sleep(2000);
 
-        // Third command
+        // Service status
         await typeCommand(commands[commandIndex]);
         commandIndex++;
         await sleep(outputDelay);
 
-        // Third output
         await displayOutput(`
-            <p class="text-red-400">No critical anomalies found in public logs.</p>
-            <p class="text-green-400">System status: OPTIMAL</p>
+            <p class="text-green-400">echo-core.service - Echo Core System</p>
+            <p class="text-green-400">   Loaded: loaded (/etc/systemd/system/echo-core.service; enabled; vendor preset: enabled)</p>
+            <p class="text-green-400">   Active: active (running) since Fri 2025-09-26 08:00:00 UTC; 1min 30s ago</p>
+            <p class="text-blue-400"> Main PID: 1001 (echo-core)</p>
+            <p class="text-blue-400">    Tasks: 5 (limit: 4915)</p>
+            <p class="text-blue-400">   Memory: 12.5M</p>
+            <p class="text-blue-400">   CGroup: /system.slice/echo-core.service</p>
+            <p class="text-green-400">System services are fully operational.</p>
         `);
         await sleep(2000);
 
-        // Final command
+        // Final welcome message
         await typeCommand(commands[commandIndex]);
         commandIndex++;
         await sleep(outputDelay);
 
-        // Final output (the actual hero content)
         await displayOutput(`
-            <h1 class="m-0 mb-2 font-mono font-medium text-heading text-3xl md:text-4xl lg:text-5xl">John Ogletree</h1>
-            <div class="flex flex-wrap items-center gap-x-6 gap-y-4">
-                <p class="m-0 text-text-light text-base md:text-lg">Digital Creator. Problem Solver. Lifelong Learner.</p>
-                <button type="submit" class="w-full inline-flex items-center justify-center rounded-md border border-heading bg-heading py-3 px-8 font-mono font-bold text-text no-underline transition-colors duration-200 hover:border-[#D36C52] hover:bg-[#D36C52] hover:text-text">Subscribe</button>
-            </div>
+            <pre class="text-green-400">
+███████╗██╗  ██╗███████╗ ██████╗ ██████╗
+██╔════╝██║  ██║██╔════╝██╔═══██╗██╔══██╗
+█████╗  ███████║█████╗  ██║   ██║██████╔╝
+██╔══╝  ██╔══██║██╔══╝  ██║   ██║██╔══██╗
+███████╗██║  ██║███████╗╚██████╔╝██║  ██║
+╚══════╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
+            </pre>
+            <p class="text-green-400 text-xl font-bold">Welcome, Operator. System online.</p>
+            <p class="text-gray-400">Loading main interface...</p>
         `);
-        typedTextSpan.style.display = 'none'; // Hide the command line after sequence
+        await sleep(3000);
+
+        // Hide terminal overlay and show main content
+        terminalOverlay.style.opacity = '0';
+        await sleep(1000); // Wait for fade out
+        terminalOverlay.style.display = 'none';
+        mainContent.style.display = 'block';
+        mainContent.style.opacity = '1';
     };
 
     runSequence();
